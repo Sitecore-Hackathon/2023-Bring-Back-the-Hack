@@ -1,7 +1,10 @@
-
 import { NextRequest, NextResponse } from 'next/server';
 import regexParser from 'regex-parser';
-import { GraphQLSecuredPagesService, GraphQLSecuredPagesServiceConfig, resultEntry } from 'src/securedPages/grapghql-securedpages-service';
+import {
+  GraphQLSecuredPagesService,
+  GraphQLSecuredPagesServiceConfig,
+  resultEntry,
+} from 'src/securedPages/grapghql-securedpages-service';
 /**
  * extended SecuredPagesMiddlewareConfig config type for SecuredPagesMiddleware
  */
@@ -22,7 +25,7 @@ export type SecuredPagesMiddlewareConfig = Omit<GraphQLSecuredPagesServiceConfig
    * @returns {boolean} false by default
    */
   disabled?: (req?: NextRequest, res?: NextResponse) => boolean;
-  
+
   /**
    * fallback hostname in case `host` header is not present
    * @default localhost
@@ -31,7 +34,7 @@ export type SecuredPagesMiddlewareConfig = Omit<GraphQLSecuredPagesServiceConfig
 };
 /**
  * Middleware / handler fetches all secured pages mappings from Sitecore instance by grapqhl service
- * 
+ *
  */
 export class SecuredPagesMiddleware {
   private securedPagesService: GraphQLSecuredPagesService;
@@ -75,7 +78,6 @@ export class SecuredPagesMiddleware {
   }
 
   private handler = async (req: NextRequest, res?: NextResponse): Promise<NextResponse> => {
-    
     const siteName = res?.cookies.get('sc_site');
 
     const createResponse = async () => {
@@ -86,25 +88,22 @@ export class SecuredPagesMiddleware {
       ) {
         return res || NextResponse.next();
       }
-      
+
       const existsSecuredPageMapping = await this.getExistsSecuredPages(req);
 
       if (!existsSecuredPageMapping) {
         return res || NextResponse.next();
       }
-      if(this.isAuthorized(req, existsSecuredPageMapping.CookieName.value))
-      {
+      if (this.isAuthorized(req, existsSecuredPageMapping.CookieName.value)) {
         return res || NextResponse.next();
       }
       const url = req.nextUrl.clone();
-      
+
       url.href = existsSecuredPageMapping.LoginRedirectUrl.value;
       url.locale = req.nextUrl.locale;
-      
 
       const loginUrl = decodeURIComponent(url.href);
       return NextResponse.redirect(loginUrl, 301);
-      
     };
 
     const response = await createResponse();
@@ -114,40 +113,40 @@ export class SecuredPagesMiddleware {
 
     return response;
   };
-private isAuthorized(req: NextRequest, cookieName:string) :boolean{
-   let authCookie = req.cookies.get(cookieName);
-   return authCookie!=null;
-}
+  private isAuthorized(req: NextRequest, cookieName: string): boolean {
+    const authCookie = req.cookies.get(cookieName);
+    return authCookie != null;
+  }
   /**
    * Method returns resultEntry when matches
    * @param {NextRequest} req request
    * @returns Promise<resultEntry | undefined>
    * @private
    */
-  private async getExistsSecuredPages(
-    req: NextRequest,
-  ): Promise<resultEntry | undefined> {
+  private async getExistsSecuredPages(req: NextRequest): Promise<resultEntry | undefined> {
     //add some caching here
     const securedPages = await this.securedPagesService.fetchSecuredPagesMapping();
-   
-    if(securedPages && securedPages.search && securedPages.search.total>0)
-    {
+
+    if (securedPages && securedPages.search && securedPages.search.total > 0) {
       const total = securedPages.search?.results ? securedPages.search?.results.length : 0;
       for (let i = 0; i < total; i++) {
-        var urlMapping = securedPages.search?.results[i]?.UrlMapping.value;
-        if(urlMapping && urlMapping != ""){
-          if(regexParser(urlMapping.toLowerCase()).test(req.nextUrl.pathname.toLowerCase()) ||
-          regexParser(urlMapping.toLowerCase()).test(
-            `/${req.nextUrl.locale}${req.nextUrl.pathname}`.toLowerCase()
-          ))
-          {
-            if(securedPages.search?.results[i].CookieName && securedPages.search?.results[i].LoginRedirectUrl)
+        const urlMapping = securedPages.search?.results[i]?.UrlMapping.value;
+        if (urlMapping && urlMapping != '') {
+          if (
+            regexParser(urlMapping.toLowerCase()).test(req.nextUrl.pathname.toLowerCase()) ||
+            regexParser(urlMapping.toLowerCase()).test(
+              `/${req.nextUrl.locale}${req.nextUrl.pathname}`.toLowerCase()
+            )
+          ) {
+            if (
+              securedPages.search?.results[i].CookieName &&
+              securedPages.search?.results[i].LoginRedirectUrl
+            )
               return securedPages.search?.results[i];
           }
         }
       }
     }
     return undefined;
-      
   }
 }
