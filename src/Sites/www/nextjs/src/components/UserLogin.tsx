@@ -31,7 +31,7 @@ const UserLogin = (props: UserLoginProps): JSX.Element => {
         </a>
         <Gravatar
           className="rounded-circle mx-2 shadow-4-strong"
-          email={session.user.email!}
+          email={session?.user?.email as string}
           size={64}
           rating={props.fields.Rating.value}
           default={props.fields.DefaultImage.value}

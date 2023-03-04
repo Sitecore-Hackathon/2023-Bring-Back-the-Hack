@@ -104,10 +104,10 @@ export class GraphQLSecuredPagesService {
         templateId: templateId,
       });
 
-      debug.http('CACHE MISS - SecurityPages', pathId, data);
+      debug.http('CACHE MISS - SecurityPages', pathId);
       this.cache.setCacheValue(cacheKey, data);
     } else {
-      debug.http('CACHE HIT - SecurityPages', pathId, data);
+      debug.http('CACHE HIT - SecurityPages', pathId);
     }
 
     return data;

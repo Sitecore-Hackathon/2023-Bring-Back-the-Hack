@@ -23,7 +23,7 @@ class SecuredPagesPlugin implements MiddlewarePlugin {
       disabled: () => false, //=> process.env.NODE_ENV === 'development',
       // This function resolves site based on hostname
       cacheEnabled: true,
-      cacheTimeout: 300, // seconds
+      cacheTimeout: 2, // seconds
     });
   }
 

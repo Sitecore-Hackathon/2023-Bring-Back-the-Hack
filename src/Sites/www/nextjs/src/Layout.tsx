@@ -5,7 +5,7 @@ import {
   Field,
   getPublicUrl,
   LayoutServiceData,
-  Placeholder
+  Placeholder,
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import Head from 'next/head';
 import Scripts from 'src/Scripts';

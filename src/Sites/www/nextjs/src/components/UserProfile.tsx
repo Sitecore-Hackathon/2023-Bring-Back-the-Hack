@@ -14,7 +14,7 @@ const UserProfile = (props: UserProfileProps): JSX.Element => {
       <div className="component-content">
         {!session && (
           <>
-            <span>You are not signed in</span>
+            <span>You are not signed in</span>{' '}
             <a
               href={`/api/auth/signin`}
               onClick={(e) => {

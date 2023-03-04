@@ -40,7 +40,7 @@ export type SecuredPagesMiddlewareConfig = Omit<GraphQLSecuredPagesServiceConfig
  */
 export class SecuredPagesMiddleware {
   private securedPagesService: GraphQLSecuredPagesService;
-  private locales: string[];
+  // private locales: string[];
   private defaultHostname: string;
 
   /**
@@ -50,7 +50,7 @@ export class SecuredPagesMiddleware {
     // NOTE: we provide native fetch for compatibility on Next.js Edge Runtime
     // (underlying default 'cross-fetch' is not currently compatible: https://github.com/lquixada/cross-fetch/issues/78)
     this.securedPagesService = new GraphQLSecuredPagesService({ ...config, fetch: fetch });
-    this.locales = config.locales;
+    // this.locales = config.locales;
     this.defaultHostname = config.defaultHostname || 'localhost';
   }
 
@@ -104,7 +104,7 @@ export class SecuredPagesMiddleware {
       url.locale = req.nextUrl.locale;
 
       const loginUrl = decodeURIComponent(url.href);
-      return NextResponse.redirect(loginUrl, 301);
+      return NextResponse.redirect(loginUrl, 302);
     };
 
     const response = await createResponse();
@@ -114,7 +114,6 @@ export class SecuredPagesMiddleware {
   private async isAuthorized(req: NextRequest): Promise<boolean> {
     const secret = process.env.SECRET;
     const token = await getToken({ req, secret });
-
     return !!token;
   }
   /**
@@ -133,6 +132,7 @@ export class SecuredPagesMiddleware {
         const split = urlMappings.split(/\r?\n/);
         for (const each in split) {
           const urlMapping = split[each];
+
           if (!urlMapping) {
             continue;
           }
@@ -143,7 +143,7 @@ export class SecuredPagesMiddleware {
                 `/${req.nextUrl.locale}${req.nextUrl.pathname}`.toLowerCase()
               )
             ) {
-              if (securedPages.search?.results[i].LoginRedirectUrl) {
+              if (!!securedPages.search?.results[i].LoginRedirectUrl) {
                 return securedPages.search?.results[i];
               }
             }
