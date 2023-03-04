@@ -22,6 +22,7 @@ const Navigation = ({ layoutData }: LayoutProps): JSX.Element => {
         </Link>
       </h5>
       <nav className="my-2 my-md-0 mr-md-3 flex-grow-1 ">
+        {/* 
         <a
           href="https://styleguide.hackback.localhost"
           // target="_blank"
@@ -29,8 +30,7 @@ const Navigation = ({ layoutData }: LayoutProps): JSX.Element => {
           rel="noreferrer"
         >
           Styleguide
-          {/* {t('Styleguide')} */}
-        </a>
+        </a>*/}
       </nav>
       <div id="UserProfileBlock">
         {route && <Placeholder name="user-header" rendering={route} />}
