@@ -1,12 +1,20 @@
-import { getPublicUrl } from '@sitecore-jss/sitecore-jss-nextjs';
+import { getPublicUrl, LayoutServiceData, Placeholder } from '@sitecore-jss/sitecore-jss-nextjs';
 import Link from 'next/link';
-import SignIn from './SignIn';
 
 // Prefix public assets with a public URL to enable compatibility with Sitecore Experience Editor.
 // If you're not supporting the Experience Editor, you can remove this.
 const publicUrl = getPublicUrl();
 
-const Navigation = (): JSX.Element => {
+interface LayoutProps {
+  layoutData: LayoutServiceData;
+}
+
+const Navigation = ({layoutData} : LayoutProps): JSX.Element => {
+  console.log(layoutData);
+  // const route2 = props.sitecore.route;
+  const  route  =  layoutData.sitecore.route;
+  // console.log(route);
+  
   return (
     <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
       <h5 className="my-0 mr-md-auto font-weight-normal">
@@ -27,7 +35,7 @@ const Navigation = (): JSX.Element => {
           {/* {t('Styleguide')} */}
         </a>
       </nav>
-      <SignIn />
+      <div id="UserProfileBlock">{route && <Placeholder name="UserProfileBlock" rendering={route} />}</div>
     </div>
   );
 };

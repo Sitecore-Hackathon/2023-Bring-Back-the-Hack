@@ -18,7 +18,6 @@ const UserProfileBlock = (props: UserProfileBlockProps): JSX.Element => {
 
     const { data: session /*, status*/ } = useSession();
 
-    console.log(props);
     if (session?.user){
         return (
             <div>
@@ -31,13 +30,11 @@ const UserProfileBlock = (props: UserProfileBlockProps): JSX.Element => {
                     }}>
                     <span>Sign Out</span>
                 </a>
-                <a className='mx-2'>
-                    <Gravatar className="rounded-circle shadow-4-strong"
+                    <Gravatar className="rounded-circle mx-2 shadow-4-strong"
                         email={session.user.email!} 
                         size={64} 
                         rating={props.fields.Rating.value} 
                         default={props.fields.DefaultImage.value} />
-                </a>
             </div>
         );
     }
