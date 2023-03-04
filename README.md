@@ -78,16 +78,17 @@ This module implements complete implemntation of Authentication and Authorizatio
 >3. profit
 
 1. Download prerequesites
-* NodeJs 16.x
-* .NET 6.0 SDK
-* .NET Framework 4.8 SDK
-* Visual Studio 2019+
-* Docker for Windows, with Windows Containers enabled
-
-2.  Pull down this repository [Link goes here]
-3. License to the root or update env
-3. Init
-3. up
+    * NodeJs 16.x
+    * .NET 6.0 SDK
+    * .NET Framework 4.8 SDK
+    * Visual Studio 2019+
+    * Docker for Windows, with Windows Containers enabled
+2. Download or use Git to pull down this project
+3. Add add sitecore License to the project
+    * Option 1: Add _Licese.xml_ file to _.\license_ folder
+    * Option 2: Add License code to _.\run\sitecore-xm1-sxa\.env_
+4. \.Init.ps1
+5. .\up.ps1
 
 After these steps run successfully you are ready to go.
 
