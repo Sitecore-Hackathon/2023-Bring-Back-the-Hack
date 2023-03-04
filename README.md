@@ -108,12 +108,8 @@ This module allow content authors to lock down specific pages or entire path beh
 7. Then navigate to the path you configured, you should be redirect back to login page
     Make sure you created dummy page that match the path you configured
 
-- Two components
-    User profile components
-    [IMAGE HERE]
-    SignIn/SignOut component
-    [IMAGE HERE]
-
-
 ## Comments
-If you'd like to make additional comments that is important for your module entry.
+This SXA enchancement come with two extensible and reusable renderings.
+### User Login
+
+### User Profile
