@@ -35,7 +35,7 @@ This module implements complete implemntation of Authentication and Authorizatio
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
 
-⟹ [Replace this Video link](#video-link)
+⟹ [Replace this Video link](https://www.youtube.com/watch?v=biRkkxsGiAw)
 
 ## Pre-requisites and Dependencies
 We are using local containarized environment, everything you need is already configured inside the repo and should be automatically installed when you finish the installation instructions

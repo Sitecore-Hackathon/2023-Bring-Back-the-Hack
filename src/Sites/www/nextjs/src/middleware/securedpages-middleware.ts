@@ -81,6 +81,7 @@ export class SecuredPagesMiddleware {
 
   private handler = async (req: NextRequest, res?: NextResponse): Promise<NextResponse> => {
     const createResponse = async () => {
+      // CASE: Ignore
       if (
         (this.config.disabled && this.config.disabled(req, NextResponse.next())) ||
         this.excludeRoute(req.nextUrl.pathname) ||
@@ -91,13 +92,17 @@ export class SecuredPagesMiddleware {
 
       const existsSecuredPageMapping = await this.getExistsSecuredPages(req);
 
+      // CASE: Not Secured
       if (!existsSecuredPageMapping) {
         return res || NextResponse.next();
       }
+
       if (await this.isAuthorized(req)) {
+        // CASE: Secured but user is authorized
         return res || NextResponse.next();
       }
 
+      // CASE: Secured, not authorized -> redirect
       const url = req.nextUrl.clone();
 
       url.pathname = existsSecuredPageMapping.LoginRedirectUrl.value;
@@ -111,6 +116,7 @@ export class SecuredPagesMiddleware {
 
     return response;
   };
+
   private async isAuthorized(req: NextRequest): Promise<boolean> {
     const secret = process.env.SECRET;
     const token = await getToken({ req, secret });
