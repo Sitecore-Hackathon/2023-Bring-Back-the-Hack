@@ -1,3 +1,4 @@
+![Sitecore Hackathon](docs/images/hackathon.png)
 # Hackathon Submission Entry form
 
 ## Team name
