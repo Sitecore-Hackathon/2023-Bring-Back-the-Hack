@@ -1,4 +1,5 @@
-import { GraphQLClient, GraphQLRequestClient } from '@sitecore-jss/sitecore-jss';
+import { debug, GraphQLClient, GraphQLRequestClient } from '@sitecore-jss/sitecore-jss';
+import { CacheClient, CacheOptions, MemoryCacheClient } from '../lib/cache-client';
 
 export type SecuredPageMapping = {
   loginRedirectUrl: string;
@@ -35,7 +36,7 @@ const defaultQuery = /* GraphQL */ `
   }
 `;
 
-export type GraphQLSecuredPagesServiceConfig = {
+export type GraphQLSecuredPagesServiceConfig = CacheOptions & {
   /**
    * Your Graphql endpoint
    */
@@ -72,6 +73,7 @@ export type resultField = {
  */
 export class GraphQLSecuredPagesService {
   private graphQLClient: GraphQLClient;
+  private cache: CacheClient<SecuredPagesQueryResult>;
 
   protected get query(): string {
     return defaultQuery;
@@ -83,6 +85,7 @@ export class GraphQLSecuredPagesService {
    */
   constructor(private options: GraphQLSecuredPagesServiceConfig) {
     this.graphQLClient = this.getGraphQLClient();
+    this.cache = this.getCacheClient();
   }
 
   /**
@@ -92,13 +95,19 @@ export class GraphQLSecuredPagesService {
    * @throws {Error} if the siteName is empty.
    */
   async fetchSecuredPagesMapping(): Promise<SecuredPagesQueryResult> {
-    let data = null;
+    const cacheKey = `securedpages-${pathId}`;
+    let data = this.cache.getCacheValue(cacheKey);
 
     if (!data) {
       data = await this.graphQLClient.request<SecuredPagesQueryResult>(this.query, {
         pathId: pathId,
         templateId: templateId,
       });
+
+      debug.http('CACHE MISS - SecurityPages', pathId, data);
+      this.cache.setCacheValue(cacheKey, data);
+    } else {
+      debug.http('CACHE HIT - SecurityPages', pathId, data);
     }
 
     return data;
@@ -114,6 +123,13 @@ export class GraphQLSecuredPagesService {
     return new GraphQLRequestClient(this.options.endpoint, {
       apiKey: this.options.apiKey,
       fetch: this.options.fetch,
+    });
+  }
+
+  protected getCacheClient(): CacheClient<SecuredPagesQueryResult> {
+    return new MemoryCacheClient<SecuredPagesQueryResult>({
+      cacheEnabled: this.options.cacheEnabled ?? true,
+      cacheTimeout: this.options.cacheTimeout ?? 10,
     });
   }
 }

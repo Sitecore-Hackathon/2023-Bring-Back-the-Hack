@@ -6,6 +6,7 @@ import {
   GraphQLSecuredPagesServiceConfig,
   resultEntry,
 } from 'src/securedPages/grapghql-securedpages-service';
+
 /**
  * extended SecuredPagesMiddlewareConfig config type for SecuredPagesMiddleware
  */
@@ -85,29 +86,24 @@ export class SecuredPagesMiddleware {
         this.excludeRoute(req.nextUrl.pathname) ||
         (this.config.excludeRoute && this.config.excludeRoute(req.nextUrl.pathname))
       ) {
-        console.log('Ignore casw');
         return res || NextResponse.next();
       }
 
       const existsSecuredPageMapping = await this.getExistsSecuredPages(req);
 
       if (!existsSecuredPageMapping) {
-        console.log('Case 1');
         return res || NextResponse.next();
       }
       if (await this.isAuthorized(req)) {
-        console.log('Case 2');
         return res || NextResponse.next();
       }
 
       const url = req.nextUrl.clone();
 
-      console.log('Case 3', url);
       url.pathname = existsSecuredPageMapping.LoginRedirectUrl.value;
       url.locale = req.nextUrl.locale;
 
       const loginUrl = decodeURIComponent(url.href);
-      console.log('Redirecting', loginUrl);
       return NextResponse.redirect(loginUrl, 301);
     };
 
@@ -128,8 +124,6 @@ export class SecuredPagesMiddleware {
    * @private
    */
   private async getExistsSecuredPages(req: NextRequest): Promise<resultEntry | undefined> {
-    console.log('Incoming', req.nextUrl);
-    //add some caching here
     const securedPages = await this.securedPagesService.fetchSecuredPagesMapping();
 
     if (securedPages && securedPages.search && securedPages.search.total > 0) {
@@ -149,9 +143,9 @@ export class SecuredPagesMiddleware {
                 `/${req.nextUrl.locale}${req.nextUrl.pathname}`.toLowerCase()
               )
             ) {
-              if (securedPages.search?.results[i].LoginRedirectUrl)
-                console.log('Ready with', securedPages.search?.results[i]);
-              return securedPages.search?.results[i];
+              if (securedPages.search?.results[i].LoginRedirectUrl) {
+                return securedPages.search?.results[i];
+              }
             }
           }
         }
