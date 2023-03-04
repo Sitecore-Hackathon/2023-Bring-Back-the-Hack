@@ -1,0 +1,52 @@
+---
+ID: "709df5de-0762-5e55-821b-a81e007773d4"
+Parent: "e5d30d93-4777-5ba6-8c52-c797a2ea758f"
+Template: "cce26c70-e25b-541a-9f6b-f2904fdac11d"
+Path: "/sitecore/content/Styleguide/home/styleguide/Page Components/styleguide-jss-styleguide-section-B7985C8DEA10AB2C5CC77ABC90CF4126F21840592E09B2C6DB07D84D314CDCE0D4"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Styleguide-FieldUsage-ContentList-11"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "08da963d-a0b8-54fd-beb5-f84a846a971f"
+      Hint: description
+      Value: |
+        <p>
+          <small>
+            Content Lists are a way to reference zero or more other content items.
+            Referenced items may be shared.
+            To reference a single content item, use an <em>Item Link</em> field.<br />
+            <strong>Note:</strong> Sitecore does not support inline editing of Content List fields. The value must be edited in Experience Editor by using the edit rendering fields button (looks like a pencil) with the whole component selected.
+          </small>
+        </p>
+        
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230228T211947Z
+    - ID: "6ca71089-7d7e-5fb0-8d8a-606df8f97d03"
+      Hint: heading
+      Value: Content List
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8b38511a-cdcb-4194-9e3b-e7d2ef73a8a5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\JssImport
+    - ID: "d215aaa7-4bb3-5597-b342-5d51c914a66f"
+      Hint: localContentList
+      Value: |
+        {220C5693-09A9-53C6-9767-AEEB43B9D5F1}
+        {A986BE85-2DF6-537D-A971-C5AE84BBACF4}
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230228T211947Z
+    - ID: "e921af19-74fb-5f97-8dbc-e0e40b49d542"
+      Hint: sharedContentList
+      Value: |
+        {BA44A248-DF2A-5C5A-A8B0-0E7F33DD718A}
+        {A047C991-07CD-5A4A-8B7D-929ACBFE6372}

@@ -1,0 +1,24 @@
+{
+    "namespace": "Sites.styleguide",
+    "references": [ "Foundation.*", "Feature.*", "Project.*" ],
+    "items" : {
+        "includes": [
+            {
+                "name": "templates",
+                "path": "/sitecore/templates/Project/Styleguide"
+            },
+            {
+                "name": "renderings",
+                "path": "/sitecore/layout/Renderings/Project/Styleguide"
+            },
+            {
+                "name": "media",
+                "path": "/sitecore/media library/Styleguide"
+            },
+            {
+                "name": "content",
+                "path": "/sitecore/content/Styleguide"
+            }
+        ]
+    }
+}

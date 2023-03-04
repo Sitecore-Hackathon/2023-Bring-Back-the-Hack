@@ -1,0 +1,32 @@
+---
+ID: "f44ca94f-94a8-4c7f-a0e5-de809bbc4b1e"
+Parent: "71878ca7-c232-4b6a-8caf-2f71e49fb1b8"
+Template: "15c3d21d-3e63-40de-8479-44f411fa77bd"
+Path: /sitecore/content/HackBack/www/Home/Page
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230303T004402Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Page
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2dd99274-7632-4b3f-973a-93809a673e01"
+    - ID: "8e6a8d45-3b30-402a-a424-c8fc20767f25"
+      Hint: Content
+      Value: "Welcome!"
+    - ID: "97331f34-7bd2-4081-bd46-cf1bfb6d03e7"
+      Hint: Title
+      Value: Page
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230303T011400Z

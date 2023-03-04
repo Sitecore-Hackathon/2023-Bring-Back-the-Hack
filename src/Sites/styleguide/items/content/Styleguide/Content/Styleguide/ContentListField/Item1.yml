@@ -1,0 +1,30 @@
+---
+ID: "ba44a248-df2a-5c5a-a8b0-0e7f33dd718a"
+Parent: "acc1d755-e080-5766-8c57-837310f5d7a8"
+Template: "f7eed095-7021-5076-9fa8-f0ea2e952734"
+Path: /sitecore/content/Styleguide/Content/Styleguide/ContentListField/Item1
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Styleguide Content List Item 1 (Shared)
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230228T211945Z
+    - ID: "3e68a4cc-91d9-5317-ab72-ba84340c7b77"
+      Hint: textField
+      Value: ContentList Demo (Shared) Item 1 Text Field
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "05461812-3078-48ff-9304-5ca11468b2dd"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\JssImport
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230228T211945Z

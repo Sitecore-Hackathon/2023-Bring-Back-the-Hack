@@ -1,0 +1,18 @@
+{
+    "namespace": "Project.Common",
+    "references": [ "Foundation.*", "Feature.*" ],
+    "items" : {
+        "includes": [
+            {
+                "name": "api-key",
+                "path": "/sitecore/system/Settings/Services/API Keys/HackBack",
+                "scope": "singleItem"
+            },
+            {
+                "name": "default-host",
+                "path": "/sitecore/system/Settings/Services/Rendering Hosts/Default",
+                "scope": "singleItem"
+            }
+        ]
+    }
+}

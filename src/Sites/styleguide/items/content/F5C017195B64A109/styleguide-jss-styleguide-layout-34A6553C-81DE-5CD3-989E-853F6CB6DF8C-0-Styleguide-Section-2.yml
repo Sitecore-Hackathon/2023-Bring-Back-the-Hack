@@ -1,0 +1,30 @@
+---
+ID: "d6b17218-6782-5765-8081-258a768698cb"
+Parent: "e5d30d93-4777-5ba6-8c52-c797a2ea758f"
+Template: "5859e275-0c0e-57dd-844f-9ee58196e405"
+Path: "/sitecore/content/Styleguide/home/styleguide/Page Components/styleguide-jss-styleguide-layout-34A6553C-81DE-5CD3-989E-853F6CB6DF8C-0-Styleguide-Section-2"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Styleguide-Section-2"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230228T211947Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7b601a0e-e29f-409f-986b-f14903484659"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\JssImport
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230228T211947Z
+    - ID: "e9402cd1-a311-5e3e-b7c6-0f931c8ef631"
+      Hint: heading
+      Value: Layout Patterns

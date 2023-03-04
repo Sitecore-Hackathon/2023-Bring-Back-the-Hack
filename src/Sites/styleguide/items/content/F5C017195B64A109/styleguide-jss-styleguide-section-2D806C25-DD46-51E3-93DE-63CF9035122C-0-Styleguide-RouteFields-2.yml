@@ -1,0 +1,33 @@
+---
+ID: "4e1b0dcb-fe2e-5173-85f7-043506631d52"
+Parent: "e5d30d93-4777-5ba6-8c52-c797a2ea758f"
+Template: "459df354-5b43-5048-b7a6-870753c7fe9e"
+Path: "/sitecore/content/Styleguide/home/styleguide/Page Components/styleguide-jss-styleguide-section-2D806C25-DD46-51E3-93DE-63CF9035122C-0-Styleguide-RouteFields-2"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Styleguide-RouteFields-2"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "08da963d-a0b8-54fd-beb5-f84a846a971f"
+      Hint: description
+      Value: "<p><small>Route-level content fields are defined on the <em>route</em> instead of on a <em>component</em>. This allows multiple components to share the field data on the same route - and querying is much easier on route level fields, making <em>custom route types</em> ideal for filterable/queryable data such as articles.</small></p>"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230228T211948Z
+    - ID: "6ca71089-7d7e-5fb0-8d8a-606df8f97d03"
+      Hint: heading
+      Value: "Route-level Fields"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5cbe22a5-2b29-4723-aa68-095c2673340a"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\JssImport
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230228T211948Z

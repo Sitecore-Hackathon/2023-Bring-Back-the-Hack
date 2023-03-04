@@ -1,0 +1,49 @@
+---
+ID: "d886f68a-68a8-5537-839f-8e65d8dcbf8f"
+Parent: "e5d30d93-4777-5ba6-8c52-c797a2ea758f"
+Template: "e68bfadb-5e26-5068-afd5-461a72af4f34"
+Path: "/sitecore/content/Styleguide/home/styleguide/Page Components/styleguide-jss-styleguide-section-B7FCF54E14D2DDEE96747EE3CC441EBE9A4FE9EE7D90F5ABCCDE076F5B72DBDA43"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Styleguide-FieldUsage-Link-9"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "08da963d-a0b8-54fd-beb5-f84a846a971f"
+      Hint: description
+      Value: <p>A <em>General Link</em> is a field that represents an <code>&lt;a&gt;</code> tag.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230228T211947Z
+    - ID: "25e18750-14c3-535a-a141-a6fc3b7290dd"
+      Hint: emailLink
+      Value: |
+        <link linktype="mailto" text="Send an Email" url="mailto:foo@bar.com" />
+    - ID: "3ddbb56e-f907-569c-beac-b95b65460e57"
+      Hint: paramsLink
+      Value: |
+        <link class="font-weight-bold" target="_blank" title="&lt;a&gt; title attribute" linktype="external" text="Sitecore Dev Site" url="https://dev.sitecore.net" />
+    - ID: "6ca71089-7d7e-5fb0-8d8a-606df8f97d03"
+      Hint: heading
+      Value: General Link
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8b13bdc0-23f0-41b7-9219-a78d1c828db0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d709d1de-6428-5e97-b66f-fa04d3c3ee10"
+      Hint: externalLink
+      Value: |
+        <link linktype="external" text="Link to Sitecore" url="https://www.sitecore.com" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230301T001956Z
+    - ID: "e8c02c76-314c-58a7-90df-8db322cde675"
+      Hint: internalLink
+      Value: |
+        <link id="{F0EFF56F-C019-50C0-901A-4E49EDAEFCAC}" linktype="internal" url="/Styleguide/home" />

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  A .wpp.targets file can be used to configure web application publishing.
+  https://docs.microsoft.com/en-us/aspnet/web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+    Use the SitecoreAssemblies ItemGroup provided by the Sitecore.Assemblies.Platform
+    package in order to prevent built-in Sitecore assemblies from publishing.
+    https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/sitecore-assembly-list-nuget-packages.html
+
+    Delay executing this target until after Compile in order to
+    ensure the NuGet package targets have been evaluated.
+  -->
+  <Target Name="ExcludeSitecoreAssemblies" AfterTargets="Compile">
+    <ItemGroup>
+      
+      <SitecoreAssembliesToExclude Include="Microsoft.Owin.dll" />
+      <SitecoreAssembliesToExclude Include="System.Buffers.dll" />
+      <SitecoreAssembliesToExclude Include="Sitecore.Buckets.Client.dll" />
+      <SitecoreAssembliesToExclude Include="Sitecore.Buckets.dll" />
+      <SitecoreAssembliesToExclude Include="Sitecore.Client.dll" />
+      <SitecoreAssembliesToExclude Include="System.Memory.dll" />
+      <SitecoreAssembliesToExclude Include="System.Numerics.Vectors.dll" />
+      <SitecoreAssembliesToExclude Include="System.Web.Helpers.dll" />
+      <SitecoreAssembliesToExclude Include="System.Web.Razor.dll" />
+      <SitecoreAssembliesToExclude Include="System.Web.WebPages.Deployment.dll" />
+      <SitecoreAssembliesToExclude Include="System.Web.WebPages.dll" />
+      <SitecoreAssembliesToExclude Include="System.Web.WebPages.Razor.dll" />
+
+      <SitecoreAssembliesToExclude Include="Sitecore.Framework.Caching.Diagnostics.dll" />
+      <SitecoreAssembliesToExclude Include="Sitecore.Framework.Caching.dll" />
+      <SitecoreAssembliesToExclude Include="Sitecore.Framework.Caching.Memory.dll" />
+      <SitecoreAssembliesToExclude Include="Sitecore.Framework.Caching.Redis.dll" />
+      <SitecoreAssembliesToExclude Include="Sitecore.Framework.Common.MatchingOptions.dll" />
+      <SitecoreAssembliesToExclude Include="Sitecore.Framework.Diagnostics.Abstractions.dll" />
+      <SitecoreAssembliesToExclude Include="Sitecore.Framework.Diagnostics.dll" />
+      <SitecoreAssembliesToExclude Include="@(SitecoreAssemblies)" />
+      <SitecoreAssembliesToExclude Include="IdentityModel.dll" />
+		  <ExcludeFromPackageFiles Include="@(SitecoreAssemblies -> 'bin\%(Filename)%(Extension)')" />
+		  <ExcludeFromPackageFiles Include="@(SitecoreAssemblies -> 'bin\%(Filename).pdb')" />
+		  <ExcludeFromPackageFiles Include="@(SitecoreAssemblies -> 'bin\%(Filename).xml')" />
+    </ItemGroup>
+  </Target>
+</Project>

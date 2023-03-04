@@ -1,0 +1,42 @@
+{
+    "namespace": "Sites.www",
+    "references": [ "Foundation.*", "Feature.*", "Project.*" ],
+    "items" : {
+        "includes": [
+            {
+                "name": "templates",
+                "path": "/sitecore/templates/Project/HackBack",
+                "scope": "DescendantsOnly"
+            },
+            {
+                "name": "branches",
+                "path": "/sitecore/templates/branches/Project/HackBack",
+                "scope": "DescendantsOnly"
+            },
+            {
+                "name": "settings",
+                "path": "/sitecore/system/Settings/Project/HackBack",
+                "scope": "DescendantsOnly"
+            },
+            {
+                "name": "renderings",
+                "path": "/sitecore/layout/renderings/Project/HackBack",
+                "scope": "DescendantsOnly"
+            },
+            {
+                "name": "placeholder",
+                "path": "/sitecore/layout/placeholder settings/Project/HackBack",
+                "scope": "DescendantsOnly"
+            },
+            {
+                "name": "media",
+                "path": "/sitecore/media library/Project/HackBack",
+                "scope": "DescendantsOnly"
+            },
+            {
+                "name": "content",
+                "path": "/sitecore/content/HackBack"
+            }
+        ]
+    }
+}

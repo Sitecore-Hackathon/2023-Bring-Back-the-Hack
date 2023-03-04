@@ -1,0 +1,9 @@
+{
+  "sitecore": {
+    "instancePath": "..\\..\\docker\\deploy\\platform\\",
+    "apiKey": "35D583E1-4F67-412C-A128-13C39322C39A",
+    "deploySecret": "C424D8EAAB7B4829B5076392765A7594",
+    "deployUrl": "https://cm.hackback.localhost/sitecore/api/jss/import",
+    "layoutServiceHost": "https://cm.hackback.localhost"
+  }
+}

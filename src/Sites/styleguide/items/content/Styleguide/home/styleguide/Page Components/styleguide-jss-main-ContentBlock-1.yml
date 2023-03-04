@@ -1,0 +1,36 @@
+---
+ID: "8afc9a78-6f44-538c-96eb-ecdb1902220f"
+Parent: "e5d30d93-4777-5ba6-8c52-c797a2ea758f"
+Template: "e6e2d2e3-0606-559a-9314-79207f26506e"
+Path: "/sitecore/content/Styleguide/home/styleguide/Page Components/styleguide-jss-main-ContentBlock-1"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "ContentBlock-1"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230228T211946Z
+    - ID: "2b60a99f-e723-54fc-a7a2-ec7c47e7749a"
+      Hint: heading
+      Value: JSS Styleguide
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e6ddbd08-3a85-4852-a581-391ef6273adc"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\JssImport
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230228T211946Z
+    - ID: "ef9a84ed-826e-5fe6-b3fe-066e537f1c59"
+      Hint: content
+      Value: |
+        <p>This is a live set of examples of how to use JSS. For more information on using JSS, please see <a href="https://jss.sitecore.com" target="_blank" rel="noopener noreferrer">the documentation</a>.</p>
+        <p>The content and layout of this page is defined in <code>/data/routes/styleguide/en.yml</code></p>
+        

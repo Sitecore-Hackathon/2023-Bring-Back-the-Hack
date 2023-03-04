@@ -1,0 +1,37 @@
+{
+    "namespace": "Foundation.Folders",
+    "items" : {
+        "includes": [
+            {
+                "name": "templates",
+                "path": "/sitecore/templates/Foundation/HackBack",
+                "scope": "SingleItem"
+            },          
+            {
+                "name": "branches",
+                "path": "/sitecore/templates/branches/Foundation/HackBack",
+                "scope": "SingleItem"
+            },
+            {
+                "name": "settings",
+                "path": "/sitecore/system/Settings/Foundation/HackBack",
+                "scope": "SingleItem"
+            },
+            {
+                "name": "renderings",
+                "path": "/sitecore/layout/renderings/Foundation/HackBack",
+                "scope": "SingleItem"
+            },
+            {
+                "name": "placeholders",
+                "path": "/sitecore/layout/placeholder settings/Foundation/HackBack",
+                "scope": "SingleItem"
+            },
+            {
+                "name": "media",
+                "path": "/sitecore/media library/Foundation/HackBack",
+                "scope": "SingleItem"
+            }
+        ]
+    }
+}
