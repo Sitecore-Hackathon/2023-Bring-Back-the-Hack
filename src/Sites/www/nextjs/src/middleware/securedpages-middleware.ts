@@ -1,3 +1,4 @@
+import { getToken } from 'next-auth/jwt';
 import { NextRequest, NextResponse } from 'next/server';
 import regexParser from 'regex-parser';
 import {
@@ -78,44 +79,47 @@ export class SecuredPagesMiddleware {
   }
 
   private handler = async (req: NextRequest, res?: NextResponse): Promise<NextResponse> => {
-    const siteName = res?.cookies.get('sc_site');
-
     const createResponse = async () => {
       if (
         (this.config.disabled && this.config.disabled(req, NextResponse.next())) ||
         this.excludeRoute(req.nextUrl.pathname) ||
         (this.config.excludeRoute && this.config.excludeRoute(req.nextUrl.pathname))
       ) {
+        console.log('Ignore casw');
         return res || NextResponse.next();
       }
 
       const existsSecuredPageMapping = await this.getExistsSecuredPages(req);
 
       if (!existsSecuredPageMapping) {
+        console.log('Case 1');
         return res || NextResponse.next();
       }
-      if (this.isAuthorized(req, existsSecuredPageMapping.CookieName.value)) {
+      if (await this.isAuthorized(req)) {
+        console.log('Case 2');
         return res || NextResponse.next();
       }
+
       const url = req.nextUrl.clone();
 
-      url.href = existsSecuredPageMapping.LoginRedirectUrl.value;
+      console.log('Case 3', url);
+      url.pathname = existsSecuredPageMapping.LoginRedirectUrl.value;
       url.locale = req.nextUrl.locale;
 
       const loginUrl = decodeURIComponent(url.href);
+      console.log('Redirecting', loginUrl);
       return NextResponse.redirect(loginUrl, 301);
     };
 
     const response = await createResponse();
 
-    // Share site name with the following executed middlewares
-    response.cookies.set('sc_site', siteName);
-
     return response;
   };
-  private isAuthorized(req: NextRequest, cookieName: string): boolean {
-    const authCookie = req.cookies.get(cookieName);
-    return authCookie != null;
+  private async isAuthorized(req: NextRequest): Promise<boolean> {
+    const secret = process.env.SECRET;
+    const token = await getToken({ req, secret });
+
+    return !!token;
   }
   /**
    * Method returns resultEntry when matches
@@ -124,25 +128,31 @@ export class SecuredPagesMiddleware {
    * @private
    */
   private async getExistsSecuredPages(req: NextRequest): Promise<resultEntry | undefined> {
+    console.log('Incoming', req.nextUrl);
     //add some caching here
     const securedPages = await this.securedPagesService.fetchSecuredPagesMapping();
 
     if (securedPages && securedPages.search && securedPages.search.total > 0) {
       const total = securedPages.search?.results ? securedPages.search?.results.length : 0;
       for (let i = 0; i < total; i++) {
-        const urlMapping = securedPages.search?.results[i]?.UrlMapping.value;
-        if (urlMapping && urlMapping != '') {
-          if (
-            regexParser(urlMapping.toLowerCase()).test(req.nextUrl.pathname.toLowerCase()) ||
-            regexParser(urlMapping.toLowerCase()).test(
-              `/${req.nextUrl.locale}${req.nextUrl.pathname}`.toLowerCase()
-            )
-          ) {
+        const urlMappings = securedPages.search?.results[i]?.UrlMapping.value;
+        const split = urlMappings.split(/\r?\n/);
+        for (const each in split) {
+          const urlMapping = split[each];
+          if (!urlMapping) {
+            continue;
+          }
+          if (urlMapping && urlMapping != '') {
             if (
-              securedPages.search?.results[i].CookieName &&
-              securedPages.search?.results[i].LoginRedirectUrl
-            )
+              regexParser(urlMapping.toLowerCase()).test(req.nextUrl.pathname.toLowerCase()) ||
+              regexParser(urlMapping.toLowerCase()).test(
+                `/${req.nextUrl.locale}${req.nextUrl.pathname}`.toLowerCase()
+              )
+            ) {
+              if (securedPages.search?.results[i].LoginRedirectUrl)
+                console.log('Ready with', securedPages.search?.results[i]);
               return securedPages.search?.results[i];
+            }
           }
         }
       }

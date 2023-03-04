@@ -1,0 +1,48 @@
+﻿---
+ID: "4268b5a9-7cba-48cd-b2c2-4a0c4f5838ea"
+Parent: "f1485d5c-6546-4e89-b3a5-c7651562e628"
+Template: "15c3d21d-3e63-40de-8479-44f411fa77bd"
+Path: /sitecore/content/HackBack/www/Home/user/profile
+SharedFields:
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{E70D9EA8-94CA-488B-B610-9535A3F8D3A2}"
+          p:after="*[1=2]"
+          s:id="{27467A24-9F1E-4D24-9BDE-834E0E5FFD9D}"
+          s:ph="headless-main" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Profile
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230304T154518Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Profile
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "edf08298-2450-4c4f-b8ca-9ab11737d835"
+    - ID: "97331f34-7bd2-4081-bd46-cf1bfb6d03e7"
+      Hint: Title
+      Value: Profile
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230304T155921Z

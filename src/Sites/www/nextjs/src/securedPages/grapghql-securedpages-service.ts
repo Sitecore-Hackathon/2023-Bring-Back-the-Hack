@@ -1,47 +1,41 @@
-import { GraphQLClient, GraphQLRequestClient } from "@sitecore-jss/sitecore-jss";
+import { GraphQLClient, GraphQLRequestClient } from '@sitecore-jss/sitecore-jss';
 
+export type SecuredPageMapping = {
+  loginRedirectUrl: string;
+};
+const pathId: string = process.env.SECUREDPAGES_PATH_ID ?? '';
+const templateId: string = process.env.SECUREDPAGES_TEMPLATE_ID ?? '';
 
-export type SecuredPageMapping =
- {
-    cookieName: string
-    loginRedirectUrl: string
-  };
-  const pathId: string = process.env.SECUREDPAGES_PATH_ID ?? "";
-  const templateId: string = process.env.SECUREDPAGES_TEMPLATE_ID ?? "";
- 
 // The default query for request redirects of site
 const defaultQuery = /* GraphQL */ `
-      query SearchSecuredPages($pathId: String!, $templateId: String!) {
-      search(
-        where: {
-          AND: [
-            { name: "_path", value: $pathId, operator: CONTAINS }
-            { name: "_templates", value: $templateId, operator: CONTAINS }
-          ]
+  query SearchSecuredPages($pathId: String!, $templateId: String!) {
+    search(
+      where: {
+        AND: [
+          { name: "_path", value: $pathId, operator: CONTAINS }
+          { name: "_templates", value: $templateId, operator: CONTAINS }
+        ]
+      }
+      first: 1
+    ) {
+      total
+      pageInfo {
+        endCursor
+        hasNext
+      }
+      results {
+        UrlMapping: field(name: "UrlMapping") {
+          value
         }
-        first: 1
-      ) {
-        total
-        pageInfo {
-          endCursor
-          hasNext
-        }
-        results {
-            UrlMapping: field(name: "UrlMapping") {
-            value
-          }
-          CookieName: field(name: "CookieName") {
-            value
-          }
-          LoginRedirectUrl: field(name: "LoginRedirectUrl") {
-            value
-          }
+        LoginRedirectUrl: field(name: "LoginRedirectUrl") {
+          value
         }
       }
     }
+  }
 `;
 
-export type GraphQLSecuredPagesServiceConfig =  {
+export type GraphQLSecuredPagesServiceConfig = {
   /**
    * Your Graphql endpoint
    */
@@ -60,20 +54,19 @@ export type GraphQLSecuredPagesServiceConfig =  {
  * The schema of data returned in response to secured pages array request
  */
 export type SecuredPagesQueryResult = {
-  search: { 
-    total: number,
-    results: resultEntry[]
+  search: {
+    total: number;
+    results: resultEntry[];
   };
 };
 export type resultEntry = {
-  UrlMapping:resultField,
-  CookieName:resultField,
-  LoginRedirectUrl:resultField,
-}
+  UrlMapping: resultField;
+  LoginRedirectUrl: resultField;
+};
 
-export type resultField={
-  value:string 
-}
+export type resultField = {
+  value: string;
+};
 /**
  *  The GraphQLRedirectsService class is used to query the JSS redirects using Graphql endpoint
  */
@@ -99,17 +92,16 @@ export class GraphQLSecuredPagesService {
    * @throws {Error} if the siteName is empty.
    */
   async fetchSecuredPagesMapping(): Promise<SecuredPagesQueryResult> {
-    
-    let data = null
+    let data = null;
 
     if (!data) {
       data = await this.graphQLClient.request<SecuredPagesQueryResult>(this.query, {
         pathId: pathId,
-      templateId: templateId
+        templateId: templateId,
       });
     }
 
-    return data ;
+    return data;
   }
 
   /**
@@ -124,6 +116,4 @@ export class GraphQLSecuredPagesService {
       fetch: this.options.fetch,
     });
   }
-
-  
 }
