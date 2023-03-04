@@ -32,7 +32,7 @@ This module implements complete implemntation of Authentication and Authorizatio
 - Extending SXA toolbox to include Account related components
 - Integration with Gravatron globaly recognizable avatars ([Link](https://en.gravatar.com/)) which can be further configured to match you'r sites look and feel.
 
-![Different Configurations of Avatars](docs/images/Gravatars.png?raw=true)
+    ![Different Configurations of Avatars](docs/images/Gravatars.png?raw=true)
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
@@ -100,24 +100,13 @@ Module allows users to configure their Gravatar options (default image, and rati
 This module allow content authors to lock down specific pages or entire path behind login , to configure that follow these steps:
 1. Open up browser and navigate to https://cm.hackback.localhost/sitecore/shell , login with admin/b
 2. Inside content Editor, navigate to /sitecore/content/HackBack/www/Settings/Security Maps/Login Gates
+![Login Gates config](docs/images/ConfigureSecuredPages.png)
 3. In "Path of the secured page" field, type in the path/s (or regularExpression/s) you want to lock behind login, you can enter multiple lines
 4. in "login Redirect Url" type in "/api/auth/signin" - When users without Authorization attempt to access gated pages they will be redirected here.
 5. Save and publish
 6. To test the newly configured secure path/s, Navigate to https://www.hackback.localhost/, make sure you are logged off
 7. Then navigate to the path you configured, you should be redirect back to login page
     Make sure you created dummy page that match the path you configured
-
->⟹ Provide documentation about your module, how do the users use your module, >where are things located, what do the icons mean, are there any secret >shortcuts etc.
->
->Include screenshots where necessary. You can add images to the `./images` .>folder and then link to them from your documentation:
->
->.![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
->
->And you can embed external images too:
->
->![Random](https://thiscatdoesnotexist.com/)
->_Remove this subsection if your entry does not require >any configuration that >is not fully covered in the >installation instructions already_
-
 
 - Two components
     User profile components
