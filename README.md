@@ -10,7 +10,7 @@ Bring Back the Hack
 
 
 ## Description
-SXA Headless - Login Integration/Secured Pages
+SXA Headless - Account Module and Secured Pages
 
 Logging in using external identity providers (google, github etc) to access gated content is a common usage pattern users engage with every day.  Among other applications, it is a reliable starting point for gathering user data, tracking their journey through a site,  optimizing for maximum engagement.
 
@@ -35,7 +35,7 @@ This module implements complete implemntation of Authentication and Authorizatio
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
 
-⟹ [Replace this Video link](https://www.youtube.com/watch?v=biRkkxsGiAw)
+⟹ [Video Walkthrough](https://www.youtube.com/watch?v=biRkkxsGiAw)
 
 ## Pre-requisites and Dependencies
 We are using local containarized environment, everything you need is already configured inside the repo and should be automatically installed when you finish the installation instructions
@@ -45,24 +45,22 @@ We are using local containarized environment, everything you need is already con
 ## Installation instructions
 ### To start application
 
-1. Download prerequesites
+1. Ensure you are ready for docker with these prerequesites
     * NodeJs 16.x
     * Visual Studio 2019+/ Visual Code
     * Docker for Windows, with Windows Containers enabled
-2. Download or use Git to pull down this project
-3. The module integarte the login screen with Github, if you need other IDPs integrated, you can modify /src/pages/api/auth[...nextauth].ts file
-4. Add Sitecore license to the project
-    * Option 1: Add _Licese.xml_ file to _.\license_ folder
+2. Copy or Clone this Git repo locally
+3. Add your Sitecore **license.xml** file under .\license\ folder
 5. If your local IIS is listening on port 443, you'll need to stop it. This requires an elevated PowerShell or command prompt.
    ```
    iisreset /stop
    ```
 5. run powershell script from repositories root 
     ```
-    \.Init.ps1
+    \.init.ps1
     ```
-6. run powershell script from repositories root, At the end the script will load sitecore login sscreen to authroize CLI items sync
-    - if the script fails the first time, trying runing .\down.ps1 then .\up.ps1
+6. run powershell script from repositories root. This will also load prompt sitecore login to authroize auto CLI items sync
+    - if the script fails the first time, trying re-running .\down.ps1 then .\up.ps1
 
     ```
     .\up.ps1
@@ -71,6 +69,7 @@ We are using local containarized environment, everything you need is already con
     ```
     dotnet sitecore ser push
     ```
+
 ### To shut down the application
 1. Execute powershell script from project root folder 
     ```
@@ -79,11 +78,16 @@ We are using local containarized environment, everything you need is already con
 
 After these steps run successfully you are ready to go. up.ps1 should take care of pushing serialized templates/rendering/items to CM
 
+### Extensibility
+
+**Extending SSO providers**
+
+More Next-Auth SSO Providers can be added by modifying this file /src/Sites/www/nextjs/src/pages/api/auth/[...nextauth].ts file
 
 ### Configuration
 
 #### Gravatar Configuration
-Module allows users to configure their Gravatar options (default image, and rating filter) through content editor.  User profile block component takes datasource item that implements _UserProfileBlockRenderingDatasource_ template.
+Module allows users to configure the Gravatar options (default image, and rating filter) on the User Login component's datasource item.
 
 ## Usage instructions
 
@@ -106,8 +110,9 @@ This module allow content authors to lock down specific pages or entire path beh
 7. Then navigate to the path you configured, you should be redirect back to login page
     Make sure you created dummy page that match the path you configured
 
-## Comments
-This SXA enchancement come with two extensible and reusable renderings.
+## Components
+This SXA enchancement comes with two extensible and reusable renderings.
+
 ### User Login
 To unauthenticated users this component shows up as login button.
 ![UserLogin - without auth](docs/images/UserLogin-unauthenticated.png)
@@ -118,5 +123,6 @@ While for authenticated users it will display Gravatron profile picture as confi
 
 ### User Profile
 
+This exposes the Next Auth session and user object. This React component can be tailored as desired.
 
 
