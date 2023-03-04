@@ -28,8 +28,7 @@ This module implements complete implemntation of Authentication and Authorizatio
 
 - Implement caching on top of GraphQl to query the secured pages mapping less frequently, and have the majority of the work done on Edge runtime
 - Extending SXA toolbox to include Account related components
-- Integration with Gravatron globaly recognizable avatars ([Link](https://en.gravatar.com/)) which can be further configured to match you'r sites look and feel.
-
+- Integration with Gravatar - Globaly Recognizable Avatars ([Link](https://en.gravatar.com/)).  And ability to further configured it to match sites look and feel:
     ![Different Configurations of Avatars](docs/images/Gravatars.png?raw=true)
 
 ## Video link
