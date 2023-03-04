@@ -15,7 +15,7 @@ This module implements complete implemntation of Authentication and Authorizatio
 ### Features
 - Integration with external authentication provider - GitHub, out of the box and can be readily expanded with other providers.
 [LINK TO NEXT AUTH]
-![Screenshot of github authentication](.Images\GithubAuthentication.png)
+![Screenshot of github authentication](.Images\GitHubLogin.png)
 
 - Allows content creator to create protected pages that require Authentication to view.
 [IMAGE OF A PAGE BEING BLOCKED, OR A PAGE THAT IS GATES (PROFILE), OR SOMETHING]
@@ -38,15 +38,6 @@ This module implements complete implemntation of Authentication and Authorizatio
 
 
 ## Pre-requisites and Dependencies
-
-> ⟹ Does your module rely on other Sitecore modules or frameworks?
->
->- List any dependencies
->- Or other modules that must be installed
->- Or services that must be enabled/configured
->
->_Remove this subsection if your entry does not have any prerequisites other than Sitecore_
-
 - Uses docker - so no need to configure it.
 - Sitecore SXA Headless
 - NextJS
@@ -56,26 +47,7 @@ This module implements complete implemntation of Authentication and Authorizatio
 
 
 ## Installation instructions
-
->⟹ Write a short clear step-wise instruction on how to install your module.  
->
-> _A simple well-described installation process is required to win the Hackathon._  
-> Feel free to use any of the following tools/formats as part of the installation:
-> - Sitecore Package files
-> - Docker image builds
-> - Sitecore CLI
-> - msbuild
-> - npm / yarn
-> 
-> _Do not use_
-> - TDS
-> - Unicorn
->
->for example:
->
->1. Use the Sitecore Installation wizard to install the [package] (#link-to-package)
->2. ...
->3. profit
+### To start application
 
 1. Download prerequesites
     * NodeJs 16.x
@@ -84,11 +56,26 @@ This module implements complete implemntation of Authentication and Authorizatio
     * Visual Studio 2019+
     * Docker for Windows, with Windows Containers enabled
 2. Download or use Git to pull down this project
-3. Add add sitecore License to the project
+3. Add Sitecore license to the project
     * Option 1: Add _Licese.xml_ file to _.\license_ folder
-    * Option 2: Add License code to _.\run\sitecore-xm1-sxa\.env_
-4. run powershell script from repositories root _\.Init.ps1_
-5. run powershell script from repositories root _.\up.ps1_
+    * Option 2: Add License code to _.\run\sitecore-xm1-sxa\ .env_
+4. If your local IIS is listening on port 443, you'll need to stop it. This requires an elevated PowerShell or command prompt.
+   ```
+   iisreset /stop
+   ```
+5. run powershell script from repositories root 
+    ```
+    \.Init.ps1
+    ```
+6. run powershell script from repositories root 
+    ```
+    .\up.ps1
+    ```
+### To shut down the application
+1. Execute powershell script from project root folder 
+    ```
+    .\down.ps1
+    ```
 
 After these steps run successfully you are ready to go.
 
@@ -116,9 +103,6 @@ Module allows users to configure their Gravatar options (default image, and rati
     [IMAGE HERE]
     SignIn/SignOut component
     [IMAGE HERE]
-
-
-
 
 
 ## Comments
