@@ -1,14 +1,12 @@
 import { getPublicUrl } from '@sitecore-jss/sitecore-jss-nextjs';
-import { useI18n } from 'next-localization';
 import Link from 'next/link';
+import SignIn from './SignIn';
 
 // Prefix public assets with a public URL to enable compatibility with Sitecore Experience Editor.
 // If you're not supporting the Experience Editor, you can remove this.
 const publicUrl = getPublicUrl();
 
 const Navigation = (): JSX.Element => {
-  const { t } = useI18n();
-
   return (
     <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
       <h5 className="my-0 mr-md-auto font-weight-normal">
@@ -29,6 +27,7 @@ const Navigation = (): JSX.Element => {
           {/* {t('Styleguide')} */}
         </a>
       </nav>
+      <SignIn />
     </div>
   );
 };
