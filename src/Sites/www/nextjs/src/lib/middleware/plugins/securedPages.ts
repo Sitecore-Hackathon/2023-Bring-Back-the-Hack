@@ -21,9 +21,10 @@ class SecuredPagesPlugin implements MiddlewarePlugin {
       // This function determines if the middleware should be turned off.
       // By default it is disabled while in development mode.
       disabled: () => false, //=> process.env.NODE_ENV === 'development',
-      // This function resolves site based on hostname
+      // Toggle cache on or off
       cacheEnabled: true,
-      cacheTimeout: 2, // seconds
+      // Specify number of seconds for cache expiration
+      cacheTimeout: 2,
     });
   }
 
