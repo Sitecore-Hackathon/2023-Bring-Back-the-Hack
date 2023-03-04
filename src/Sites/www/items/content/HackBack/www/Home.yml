@@ -1,4 +1,4 @@
----
+﻿---
 ID: "71878ca7-c232-4b6a-8caf-2f71e49fb1b8"
 Parent: "64afb35b-d8aa-4730-816a-53f1f384a1a4"
 Template: "15c3d21d-3e63-40de-8479-44f411fa77bd"
@@ -13,6 +13,27 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{A05A9B4A-02EA-4DA3-9FCD-0ADCAE7AF3F2}"
+              s:ph="/headless-main/container-2" />
+            <r
+              uid="{32552E8F-37E4-421B-A320-ADF3DB1329C2}"
+              p:after="*[1=2]"
+              s:id="{7A1D9A21-B8D7-42F9-9B0B-92ABF8D1974F}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames&amp;BackgroundImage&amp;Styles&amp;CacheClearingBehavior=Clear%20on%20publish&amp;DynamicPlaceholderId=2"
+              s:ph="headless-main" />
+          </d>
+        </r>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20230301T220204Z
@@ -29,7 +50,46 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "6d9ac25e-bd88-4be2-ba70-5aada103a473"
+      Value: "62a20ace-9a08-4e48-b196-422d561c380b"
+    - ID: "8e6a8d45-3b30-402a-a424-c8fc20767f25"
+      Hint: Content
+      Value: |
+        <p><strong>The Hack is Back</strong>, with minds so sharp, <br />
+        A team of Sitecore devs, ready to embark, <br />
+        On another 24-hour hackathon spree,<br />
+        To build solutions that are sleek and free.</p>
+        <p>&nbsp;</p>
+        <p>With code as their weapon and Sitecore as their tool, <br />
+        They work with agility, they never act like a fool, <br />
+        Breaking the mold, going beyond the norm, <br />
+        Pushing the boundaries to create a new form.</p>
+        <p>&nbsp;</p>
+        <p>Their fingers fly across the keyboard, <br />
+        Their ideas are unique, never before explored, <br />
+        They brainstorm, they sketch, they code and debug, <br />
+        Ensuring their solutions never suffer from a bug.</p>
+        <p>&nbsp;</p>
+        <p>Their passion for Sitecore is hard to miss, <br />
+        As they tirelessly work on every feature and twist, <br />
+        The Hack is Back, and they're here to stay,<br />
+        Their solutions will revolutionize the way.</p>
+        <p>&nbsp;</p>
+        <p>They rise to every challenge, never to back down, <br />
+        Their dedication is unmatched, their expertise profound, <br />
+        The Hack is Back, and they're ready to win, <br />
+        With the power of Sitecore, they're sure to begin.</p>
+        <p>&nbsp;</p>
+        <p>Their teamwork is remarkable, their energy contagious, <br />
+        Their camaraderie, their spirits, their impact is ageless, <br />
+        The Hack is Back, and they're ready to go, <br />
+        They'll give it their all, and their success will show.</p>
+        <p>&nbsp;</p>
+        <p>So, let's cheer for The Hack is Back, <br />
+        And watch them rise up to the hackathon track, <br />
+        With Sitecore as their ally, their skills at the fore, <br />
+        They'll build solutions that we'll adore.</p>
+        <p>&nbsp;</p>
+        <p>- Chat GPT</p>
     - ID: "97331f34-7bd2-4081-bd46-cf1bfb6d03e7"
       Hint: Title
       Value: www
@@ -39,4 +99,4 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230301T220205Z
+      Value: 20230304T193540Z

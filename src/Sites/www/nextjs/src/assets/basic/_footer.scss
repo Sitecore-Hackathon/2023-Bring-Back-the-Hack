@@ -1,7 +1,9 @@
-@import "@sass/abstracts/mixins";
-@import "variables";
+@import '@sass/abstracts/mixins';
+@import 'variables';
 
 footer {
+  margin: 0 1em;
+
   @include respond-to(mobile-large) {
     padding-top: 0;
   }
@@ -16,7 +18,8 @@ footer {
       color: $text-white;
     }
 
-    p, span {
+    p,
+    span {
       color: $text-white;
     }
   }
@@ -29,3 +32,4 @@ footer {
     }
   }
 }
+

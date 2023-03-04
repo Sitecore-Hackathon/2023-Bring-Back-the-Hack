@@ -2,14 +2,17 @@
 ID: "b210541c-8867-4e06-b473-da4d821ae4ce"
 Parent: "94e8bdd6-b0ea-40f2-8062-2f571a19c3b4"
 Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
-Path: /sitecore/layout/Renderings/Feature/HackBack/Account/UserProfileBlock
+Path: /sitecore/layout/Renderings/Feature/HackBack/Account/User Login
 SharedFields:
 - ID: "003a72cd-4cd6-4392-9862-41d4159929cd"
   Hint: Data source
   Value: ./
 - ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
   Hint: componentName
-  Value: UserProfileBlock
+  Value: UserLogin
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/log_in.png
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
   Value: /sitecore/templates/Feature/HackBack/Account/Gravatar/UserProfileBlockRenderingDatasource
@@ -31,11 +34,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "410ca658-364a-4f14-85af-79a8e5df3370"
+      Value: "fcdc2503-5f21-4267-b29e-5a987313f4df"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230304T084625Z
+      Value: 20230304T193803Z

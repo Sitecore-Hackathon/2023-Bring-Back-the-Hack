@@ -1,11 +1,14 @@
-@import "@sass/abstracts/mixins";
-@import "variables";
+@import '@sass/abstracts/mixins';
+@import 'variables';
 
 body {
   font-family: Roboto;
   color: $main-color;
 }
 
+main {
+  margin: 2em;
+}
 
 @media (min-width: 1400px) {
   .container {
@@ -66,7 +69,7 @@ main {
         line-height: 32px;
       }
     }
-    
+
     .main-news-header {
       padding-bottom: 35px;
 
@@ -78,3 +81,4 @@ main {
     }
   }
 }
+

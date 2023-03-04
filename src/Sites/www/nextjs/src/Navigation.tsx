@@ -1,8 +1,4 @@
-import {
-  getPublicUrl,
-  LayoutServiceData,
-  Placeholder
-} from '@sitecore-jss/sitecore-jss-nextjs';
+import { getPublicUrl, LayoutServiceData, Placeholder } from '@sitecore-jss/sitecore-jss-nextjs';
 import Link from 'next/link';
 
 // Prefix public assets with a public URL to enable compatibility with Sitecore Experience Editor.
@@ -13,9 +9,9 @@ interface LayoutProps {
   layoutData: LayoutServiceData;
 }
 
-const Navigation = ({layoutData} : LayoutProps): JSX.Element => {
-  const  route  =  layoutData.sitecore.route;
-  
+const Navigation = ({ layoutData }: LayoutProps): JSX.Element => {
+  const route = layoutData.sitecore.route;
+
   return (
     <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
       <h5 className="my-0 mr-md-auto font-weight-normal">
@@ -36,7 +32,9 @@ const Navigation = ({layoutData} : LayoutProps): JSX.Element => {
           {/* {t('Styleguide')} */}
         </a>
       </nav>
-      <div id="UserProfileBlock">{route && <Placeholder name="UserProfileBlock" rendering={route} />}</div>
+      <div id="UserProfileBlock">
+        {route && <Placeholder name="user-header" rendering={route} />}
+      </div>
     </div>
   );
 };

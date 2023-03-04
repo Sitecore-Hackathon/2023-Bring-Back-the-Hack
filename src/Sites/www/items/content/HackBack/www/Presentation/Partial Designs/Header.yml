@@ -26,7 +26,7 @@ SharedFields:
           s:ds="{EF7115C9-8F23-4355-8AF5-A874D6E7D115}"
           s:id="{B210541C-8867-4E06-B473-DA4D821AE4CE}"
           s:par=""
-          s:ph="UserProfileBlock"
+          s:ph="user-header"
           s:ccb="Clear on publish" />
       </d>
     </r>
@@ -47,11 +47,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "48874db9-3dae-4cc8-b5bc-24f5591119b3"
+      Value: "513b68f2-d22b-493d-a4c4-265b29b810c1"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230304T152741Z
+      Value: 20230304T193540Z
