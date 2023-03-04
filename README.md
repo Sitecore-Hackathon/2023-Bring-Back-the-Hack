@@ -13,29 +13,19 @@ Logging in to access gated content is a common usage pattern users engage with e
 This module implements complete implemntation of Authentication and Authorization for Sitecore that is still minimal and ready to be built upon and customized.
 
 ### Features
-- Integration with external authentication provider - GitHub, out of the box and can be readily expanded with other providers.
-[LINK TO NEXT AUTH]
-![Screenshot of github authentication](.Images\GitHubLogin.png)
-
-- Allows content creator to create protected pages that require Authentication to view.
-[IMAGE OF A PAGE BEING BLOCKED, OR A PAGE THAT IS GATES (PROFILE), OR SOMETHING]
-
-- It features integration with Gravatron globaly recognizable avatars [Link](https://en.gravatar.com/) which can be further configured to match you'r sites look and feel.
-![](.Images\Gravatars.png)
-
-- Efficent caching of auth-gated resources on the edge
-
-
+- Efficent caching of auth-gated resources on the edge.
 - Implemented through Sitecores middlware plugin architecutre.
-
-
+- Integration with external authentication provider - GitHub, out of the box and can be readily expanded with other any providers offered by [NextAuth.js](https://next-auth.js.org/).
+![Screenshot of github authentication](.Images\GitHubLogin.png)
+- Allows content creator to create protected pages that require Authentication to view.
+[TODO:  IMAGE OF A PAGE BEING BLOCKED, OR A PAGE THAT IS GATES (PROFILE), OR SOMETHING]
+- It features integration with Gravatron globaly recognizable avatars [Link](https://en.gravatar.com/) which can be further configured to match you'r sites look and feel.
+![Different Configurations of Avatars](.Images\Gravatars.png)
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
 
 ⟹ [Replace this Video link](#video-link)
-
-
 
 ## Pre-requisites and Dependencies
 - Uses docker - so no need to configure it.
@@ -43,8 +33,8 @@ This module implements complete implemntation of Authentication and Authorizatio
 - NextJS
 - NextAuth
 - MemCache
-- Any providers that you use.
-
+- react-gravatar
+- NextAuth.js and any integrated providers 
 
 ## Installation instructions
 ### To start application
