@@ -71,6 +71,24 @@ After these steps run successfully you are ready to go. up.ps1 should take care 
 Module allows users to configure their Gravatar options (default image, and rating filter) through content editor.  User profile block component takes datasource item that implements _UserProfileBlockRenderingDatasource_ template.
 
 ## Usage instructions
+
+### Login with Github account
+1. Open up browser and navigate to https://www.hackback.localhost/
+2. Click on login link on the top menu, this will redirect to Github login page, you can configure other IDPs inside this file ./src/pages/api/auth[...nextauth].ts
+3. After filling your github credintials, you will be logged in within the site
+
+
+### Configuring secured pages within Sitecore CMS
+This module allow content authors to lock down specific pages or entire path behind login , to configure that follow these steps:
+1. Open up browser and navigate to https://cm.hackback.localhost/sitecore/shell , login with admin/b
+2. Inside content Editor, navigate to /sitecore/content/HackBack/www/Settings/Security Maps folder, right click and create item of template SecuredPages
+3. In "Path of the secured page" field, type in the path/s (or regularExpression/s) you want to lock behind login, you can enter multiple lines
+4. in "login Redirect Url" type in "/api/auth/signin"
+5. Save and publish
+6. To test the previously configured secure path/s, Navigate to https://www.hackback.localhost/, make sure you are logged off
+7. Then navigate to the path you configured previously, you should be redirect back to login page
+    Make sure you created dummy page that match the path you configured
+
 >⟹ Provide documentation about your module, how do the users use your module, >where are things located, what do the icons mean, are there any secret >shortcuts etc.
 >
 >Include screenshots where necessary. You can add images to the `./images` .>folder and then link to them from your documentation:
