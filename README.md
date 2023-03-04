@@ -30,13 +30,9 @@ This module implements complete implemntation of Authentication and Authorizatio
 ⟹ [Replace this Video link](#video-link)
 
 ## Pre-requisites and Dependencies
+We are using local containarized environment, everything you need is already configured inside the repo and should be automatically installed when you finish the installation instructions
 - Uses docker - so no need to configure it.
-- Sitecore SXA Headless
-- NextJS
-- NextAuth
-- MemCache
-- react-gravatar
-- NextAuth.js and any integrated providers 
+
 
 ## Installation instructions
 ### To start application
