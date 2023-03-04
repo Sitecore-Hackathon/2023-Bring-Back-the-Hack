@@ -1,0 +1,35 @@
+﻿---
+ID: "ad4276ed-c424-48fd-b2d0-5b5ecfc03e4a"
+Parent: "c53200cc-31b2-4e62-8a4c-f19b9a1eedc8"
+Template: "c53200cc-31b2-4e62-8a4c-f19b9a1eedc8"
+Path: /sitecore/templates/Feature/HackBack/Account/Gravatar/Gravatar Maturity Option/__Standard Values
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/baby.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230304T070919Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f0143093-6b3b-440e-97f4-f3b92bf79f57"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230304T070945Z

@@ -6,12 +6,12 @@
             {
                 "name": "templates",
                 "path": "/sitecore/templates/Feature/HackBack/Account",
-                "scope": "SingleItem"
+                "scope": "ItemAndDescendants"
             },
             {
                 "name": "renderings",
                 "path": "/sitecore/layout/renderings/Feature/HackBack/Account",
-                "scope": "SingleItem"
+                "scope": "ItemAndDescendants"
             }
         ]
     }
