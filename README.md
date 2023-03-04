@@ -17,15 +17,15 @@ This module implements complete implemntation of Authentication and Authorizatio
 
 ### Features
 - Integration with external authentication provider - GitHub, out of the box and can be readily expanded with other any providers offered by [NextAuth.js](https://next-auth.js.org/).
-  ![Screenshot of github authentication](.Images\GitHubLogin.png)
+  ![Screenshot of github authentication](docs\images\GitHubLogin.png)
 - Control what areas of the website are secured/gated from Site setting area in CMS
-   [TODO:  IMAGE OF A PAGE BEING BLOCKED, OR A PAGE THAT IS GATES (PROFILE), OR SOMETHING]
+   ![Can't access gated content](docs\images\CantAccessGatedPage.png)
 - Building custom NextJs middleware using Sitecores middlware plugin architecutre to determine whether the user have access to the requested page.
   [Edge Middleware Reference](https://vercel.com/docs/concepts/functions/edge-middleware/middleware-api)
 - Implement caching on top of GraphQl to query the secured pages mapping less frequently, and have the majority of the work done on Edge runtime
 - Extending SXA toolbox to include Account related components
 - It features integration with Gravatron globaly recognizable avatars [Link](https://en.gravatar.com/) which can be further configured to match you'r sites look and feel.
-![Different Configurations of Avatars](.Images\Gravatars.png)
+![Different Configurations of Avatars](docs\images\Gravatars.png)
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
