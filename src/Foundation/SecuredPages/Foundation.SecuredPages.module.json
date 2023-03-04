@@ -1,0 +1,12 @@
+{
+    "namespace": "Foundation.SecuredPages",
+    "references": [ "Foundation.Folders" ],
+    "items": {
+        "includes": [
+            {
+                "name": "templates",
+                "path": "/sitecore/templates/Foundation/HackBack/SecuredPages"
+            }
+        ]
+    }
+}
