@@ -56,9 +56,15 @@ We are using local containarized environment, everything you need is already con
     ```
     \.Init.ps1
     ```
-6. run powershell script from repositories root, if the script fails the first time, trying runing .\down.ps1 then .\up.ps1
+6. run powershell script from repositories root, At the end the script will load sitecore login sscreen to authroize CLI items sync
+    - if the script fails the first time, trying runing .\down.ps1 then .\up.ps1
+
     ```
     .\up.ps1
+    ```
+7. if Sitecore Cli does not finish correctly or you didn't login to sitecore before it times out, then you need to run the following
+    ```
+    dotnet sitecore ser push
     ```
 ### To shut down the application
 1. Execute powershell script from project root folder 
