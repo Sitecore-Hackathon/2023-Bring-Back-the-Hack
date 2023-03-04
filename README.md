@@ -24,9 +24,7 @@ This module implements complete implemntation of Authentication and Authorizatio
 
    ![Can't access gated content](docs/images/CantAccessGatedPage.png?raw=true)
 
-- Building custom NextJs middleware using Sitecores middlware plugin architecutre to determine whether the user have access to the requested page.
-
-  [Edge Middleware Reference](https://vercel.com/docs/concepts/functions/edge-middleware/middleware-api)
+- Building custom NextJs middleware using Sitecores middlware plugin architecutre to determine whether the user have access to the requested page. [Edge Middleware Reference](https://vercel.com/docs/concepts/functions/edge-middleware/middleware-api)
 
 - Implement caching on top of GraphQl to query the secured pages mapping less frequently, and have the majority of the work done on Edge runtime
 - Extending SXA toolbox to include Account related components
