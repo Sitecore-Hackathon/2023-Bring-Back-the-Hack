@@ -17,15 +17,22 @@ This module implements complete implemntation of Authentication and Authorizatio
 
 ### Features
 - Integration with external authentication provider - GitHub, out of the box and can be readily expanded with other any providers offered by [NextAuth.js](https://next-auth.js.org/).
-  ![Screenshot of github authentication](docs\images\GitHubLogin.png)
+
+  ![Screenshot of github authentication](docs/images/GitHubLogin.png?raw=true)
+
 - Control what areas of the website are secured/gated from Site setting area in CMS
-   ![Can't access gated content](docs\images\CantAccessGatedPage.png)
+
+   ![Can't access gated content](docs/images/CantAccessGatedPage.png?raw=true)
+
 - Building custom NextJs middleware using Sitecores middlware plugin architecutre to determine whether the user have access to the requested page.
+
   [Edge Middleware Reference](https://vercel.com/docs/concepts/functions/edge-middleware/middleware-api)
+
 - Implement caching on top of GraphQl to query the secured pages mapping less frequently, and have the majority of the work done on Edge runtime
 - Extending SXA toolbox to include Account related components
-- It features integration with Gravatron globaly recognizable avatars [Link](https://en.gravatar.com/) which can be further configured to match you'r sites look and feel.
-![Different Configurations of Avatars](docs\images\Gravatars.png)
+- Integration with Gravatron globaly recognizable avatars ([Link](https://en.gravatar.com/)) which can be further configured to match you'r sites look and feel.
+
+![Different Configurations of Avatars](docs/images/Gravatars.png?raw=true)
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
@@ -94,10 +101,10 @@ This module allow content authors to lock down specific pages or entire path beh
 1. Open up browser and navigate to https://cm.hackback.localhost/sitecore/shell , login with admin/b
 2. Inside content Editor, navigate to /sitecore/content/HackBack/www/Settings/Security Maps/Login Gates
 3. In "Path of the secured page" field, type in the path/s (or regularExpression/s) you want to lock behind login, you can enter multiple lines
-4. in "login Redirect Url" type in "/api/auth/signin"
+4. in "login Redirect Url" type in "/api/auth/signin" - When users without Authorization attempt to access gated pages they will be redirected here.
 5. Save and publish
-6. To test the previously configured secure path/s, Navigate to https://www.hackback.localhost/, make sure you are logged off
-7. Then navigate to the path you configured previously, you should be redirect back to login page
+6. To test the newly configured secure path/s, Navigate to https://www.hackback.localhost/, make sure you are logged off
+7. Then navigate to the path you configured, you should be redirect back to login page
     Make sure you created dummy page that match the path you configured
 
 >⟹ Provide documentation about your module, how do the users use your module, >where are things located, what do the icons mean, are there any secret >shortcuts etc.
