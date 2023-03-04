@@ -54,6 +54,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Account", "Account", "{CA4F5656-972D-4097-ADB2-355BF33F2059}"
 	ProjectSection(SolutionItems) = preProject
 		src\Feature\Account\Feature.Account.module.json = src\Feature\Account\Feature.Account.module.json
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SecuredPages", "SecuredPages", "{2F130D11-126A-4AAB-B107-35F39A294CA6}"
+	ProjectSection(SolutionItems) = preProject
+		src\Foundation\SecuredPages\Foundation.SecuredPages.module.json = src\Foundation\SecuredPages\Foundation.SecuredPages.module.json
 	EndProjectSection
 EndProject
 Global
@@ -76,6 +79,7 @@ Global
 		{5C6F3748-A237-4968-BA59-EF651D016C43} = {FF076BFA-A2AA-453D-A66C-68A05D41798E}
 		{11007957-124D-4534-8D88-53D119344E3E} = {FF076BFA-A2AA-453D-A66C-68A05D41798E}
 		{CA4F5656-972D-4097-ADB2-355BF33F2059} = {A72954EE-FC46-4F3D-8537-AE808CA74CA4}
+		{2F130D11-126A-4AAB-B107-35F39A294CA6} = {F2DFCDDA-F06D-4C97-8884-450BBCD1DD0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A7C4987-3A11-41A9-8915-5457EF7B5A6F}
