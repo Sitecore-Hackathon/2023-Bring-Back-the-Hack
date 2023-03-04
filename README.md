@@ -7,10 +7,10 @@ Bring Back the Hack
 ## Category
  Best Enhancement to SXA Headless
  
-## Module Name
- SXA Headless - Login Integration/Secured Pages
+
 
 ## Description
+SXA Headless - Login Integration/Secured Pages
 
 Logging in using external identity providers (google, github etc) to access gated content is a common usage pattern users engage with every day.  Among other applications, it is a reliable starting point for gathering user data, tracking their journey through a site,  optimizing for maximum engagement.
 
