@@ -1,0 +1,23 @@
+﻿---
+ID: "02d3e659-9030-4e05-a5bd-128b1c7203a9"
+Parent: "830a1b44-d986-454d-9aad-4b1ffce0203a"
+Template: "c53200cc-31b2-4e62-8a4c-f19b9a1eedc8"
+Path: /sitecore/content/HackBack/www/Settings/Gravatar/New Gravatar Maturity Options/g
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230304T071126Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3cf662a7-26dd-4cc8-922c-7b0fed9cca65"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230304T071126Z

@@ -1,0 +1,18 @@
+{
+    "namespace": "Feature.Account",
+    "references": [ "Foundation.*" ],
+    "items" : {
+        "includes": [
+            {
+                "name": "templates",
+                "path": "/sitecore/templates/Feature/HackBack/Account",
+                "scope": "SingleItem"
+            },
+            {
+                "name": "renderings",
+                "path": "/sitecore/layout/renderings/Feature/HackBack/Account",
+                "scope": "SingleItem"
+            }
+        ]
+    }
+}
