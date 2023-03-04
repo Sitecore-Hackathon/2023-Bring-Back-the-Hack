@@ -45,9 +45,10 @@ We are using local containarized environment, everything you need is already con
     * Visual Studio 2019+/ Visual Code
     * Docker for Windows, with Windows Containers enabled
 2. Download or use Git to pull down this project
-3. Add Sitecore license to the project
+3. The module integarte the login screen with Github, if you need other IDPs integrated, you can modify /src/pages/api/auth[...nextauth].ts file
+4. Add Sitecore license to the project
     * Option 1: Add _Licese.xml_ file to _.\license_ folder
-4. If your local IIS is listening on port 443, you'll need to stop it. This requires an elevated PowerShell or command prompt.
+5. If your local IIS is listening on port 443, you'll need to stop it. This requires an elevated PowerShell or command prompt.
    ```
    iisreset /stop
    ```
@@ -77,7 +78,7 @@ Module allows users to configure their Gravatar options (default image, and rati
 
 ### Login with Github account
 1. Open up browser and navigate to https://www.hackback.localhost/
-2. Click on login link on the top menu, this will redirect to Github login page, you can configure other IDPs inside this file ./src/pages/api/auth[...nextauth].ts
+2. Click on login link on the top menu, this will redirect to Github login page.
 3. After filling your github credintials, you will be logged in within the site
 
 
