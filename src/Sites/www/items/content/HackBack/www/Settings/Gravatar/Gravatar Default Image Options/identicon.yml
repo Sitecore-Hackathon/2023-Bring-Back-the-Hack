@@ -1,0 +1,23 @@
+﻿---
+ID: "e90e7b45-63da-4ce0-af8f-21a27c75a00e"
+Parent: "7ceb0a5b-2a2e-43bd-9a05-760883b724ee"
+Template: "e98bfa48-9344-4f4c-ad3b-82886a0eaba4"
+Path: /sitecore/content/HackBack/www/Settings/Gravatar/Gravatar Default Image Options/identicon
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230304T072347Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "dd21e961-09b8-42c8-9e25-f42f478f3d17"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230304T072347Z
