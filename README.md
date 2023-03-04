@@ -87,8 +87,8 @@ This module implements complete implemntation of Authentication and Authorizatio
 3. Add add sitecore License to the project
     * Option 1: Add _Licese.xml_ file to _.\license_ folder
     * Option 2: Add License code to _.\run\sitecore-xm1-sxa\.env_
-4. \.Init.ps1
-5. .\up.ps1
+4. run powershell script from repositories root _\.Init.ps1_
+5. run powershell script from repositories root _.\up.ps1_
 
 After these steps run successfully you are ready to go.
 
