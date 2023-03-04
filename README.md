@@ -8,17 +8,19 @@ Bring Back the Hack
 
 ## Description
 
-Logging in to access gated content is a common usage pattern users engage with every day.  Among other applications, it is a reliable starting point for gathering user data, tracking their journey through a site,  optimizing for maximum engagement.
+Logging in using external identity providers (google, github etc) to access gated content is a common usage pattern users engage with every day.  Among other applications, it is a reliable starting point for gathering user data, tracking their journey through a site,  optimizing for maximum engagement.
 
 This module implements complete implemntation of Authentication and Authorization for Sitecore that is still minimal and ready to be built upon and customized.
 
 ### Features
-- Efficent caching of auth-gated resources on the edge.
-- Implemented through Sitecores middlware plugin architecutre.
 - Integration with external authentication provider - GitHub, out of the box and can be readily expanded with other any providers offered by [NextAuth.js](https://next-auth.js.org/).
-![Screenshot of github authentication](.Images\GitHubLogin.png)
-- Allows content creator to create protected pages that require Authentication to view.
-[TODO:  IMAGE OF A PAGE BEING BLOCKED, OR A PAGE THAT IS GATES (PROFILE), OR SOMETHING]
+  ![Screenshot of github authentication](.Images\GitHubLogin.png)
+- Control what areas of the website are secured/gated from Site setting area in CMS
+   [TODO:  IMAGE OF A PAGE BEING BLOCKED, OR A PAGE THAT IS GATES (PROFILE), OR SOMETHING]
+- Building custom NextJs middleware using Sitecores middlware plugin architecutre to determine whether the user have access to the requested page.
+  [Edge Middleware Reference](https://vercel.com/docs/concepts/functions/edge-middleware/middleware-api)
+- Implement caching on top of GraphQl to query the secured pages mapping less frequently, and have the majority of the work done on Edge runtime
+- Extending SXA toolbox to include Account related components
 - It features integration with Gravatron globaly recognizable avatars [Link](https://en.gravatar.com/) which can be further configured to match you'r sites look and feel.
 ![Different Configurations of Avatars](.Images\Gravatars.png)
 
@@ -41,14 +43,11 @@ This module implements complete implemntation of Authentication and Authorizatio
 
 1. Download prerequesites
     * NodeJs 16.x
-    * .NET 6.0 SDK
-    * .NET Framework 4.8 SDK
-    * Visual Studio 2019+
+    * Visual Studio 2019+/ Visual Code
     * Docker for Windows, with Windows Containers enabled
 2. Download or use Git to pull down this project
 3. Add Sitecore license to the project
     * Option 1: Add _Licese.xml_ file to _.\license_ folder
-    * Option 2: Add License code to _.\run\sitecore-xm1-sxa\ .env_
 4. If your local IIS is listening on port 443, you'll need to stop it. This requires an elevated PowerShell or command prompt.
    ```
    iisreset /stop
@@ -57,7 +56,7 @@ This module implements complete implemntation of Authentication and Authorizatio
     ```
     \.Init.ps1
     ```
-6. run powershell script from repositories root 
+6. run powershell script from repositories root, if the script fails the first time, trying runing .\down.ps1 then .\up.ps1
     ```
     .\up.ps1
     ```
@@ -67,7 +66,7 @@ This module implements complete implemntation of Authentication and Authorizatio
     .\down.ps1
     ```
 
-After these steps run successfully you are ready to go.
+After these steps run successfully you are ready to go. up.ps1 should take care of pushing serialized templates/rendering/items to CM
 
 
 ### Configuration
