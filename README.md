@@ -5,6 +5,9 @@ Bring Back the Hack
 
 ## Category
  Best Enhancement to SXA Headless
+ 
+## Module Name
+ SXA Headless - Login Integration/Secured Pages
 
 ## Description
 
