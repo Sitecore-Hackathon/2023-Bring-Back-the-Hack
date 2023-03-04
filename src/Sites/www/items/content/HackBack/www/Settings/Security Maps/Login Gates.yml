@@ -2,7 +2,7 @@
 ID: "0deff438-968c-4f99-9b7b-60032eb4b885"
 Parent: "35f7d68a-68b8-4a5f-a2cf-acd4660dad66"
 Template: "ccdfe41e-5053-4afa-a58d-c33a359fa5ad"
-Path: /sitecore/content/HackBack/www/Settings/Security Maps/test
+Path: /sitecore/content/HackBack/www/Settings/Security Maps/Login Gates
 Languages:
 - Language: en
   Versions:
@@ -21,20 +21,19 @@ Languages:
         sitecore\Admin
     - ID: "7a31565d-82ff-450a-b124-7def5aea6ccd"
       Hint: LoginRedirectUrl
-      Value: /login
+      Value: /api/auth/signin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "6d4b2e08-3ac1-48f9-aea7-2b2c5bd69e35"
-    - ID: "a7604b63-4560-49de-b172-874b5b59713b"
-      Hint: CookieName
-      Value: test
+      Value: "a95502c5-e6d2-4fbf-8ad1-c7043c9982ca"
     - ID: "b87041f1-5a71-4140-bc4e-7bba2a8c64fa"
       Hint: UrlMapping
-      Value: /account
+      Value: |
+        /some/other/page
+        /user
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230304T152306Z
+      Value: 20230304T165839Z
