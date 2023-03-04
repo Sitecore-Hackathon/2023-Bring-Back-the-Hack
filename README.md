@@ -109,5 +109,14 @@ This module allow content authors to lock down specific pages or entire path beh
 ## Comments
 This SXA enchancement come with two extensible and reusable renderings.
 ### User Login
+To unauthenticated users this component shows up as login button.
+![UserLogin - without auth](docs\images\UserLogin-unauthenticated.png)
+
+While for authenticated users it will display Gravatron profile picture as configured on content manager and an option to sign out. 
+
+![UserLogin - with auth](docs/images/UserLogin-Authenticated.png)
 
 ### User Profile
+
+
+
