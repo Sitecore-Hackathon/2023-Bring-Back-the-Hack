@@ -1,9 +1,10 @@
-import { Redirect } from 'next';
 import {
-  DictionaryPhrases,
   ComponentPropsCollection,
+  DictionaryPhrases,
   LayoutServiceData,
 } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Redirect } from 'next';
+import type { Session } from 'next-auth';
 
 /**
  * Sitecore page props
@@ -15,4 +16,5 @@ export type SitecorePageProps = {
   notFound: boolean;
   layoutData: LayoutServiceData;
   redirect?: Redirect;
+  session?: Session | null;
 };
