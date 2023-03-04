@@ -1,12 +1,13 @@
 import { Field } from '@sitecore-jss/sitecore-jss-nextjs';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import Gravatar from 'react-gravatar';
 
-const urlToLoginPage = ""
-const urlToUserProfile = "";
-
+// The approach used in this component shows how to built a sign in and sign out
+// component that works on pages which support both client and server side
+// rendering, and avoids any flash incorrect content on initial page load.
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 
 type UserProfileBlockProps = {
-  params: { logedInUserEmail: string };
   fields: {
     Rating : Field<Gravatar.Rating>,
     DefaultImage: Field<Gravatar.DefaultImage>
@@ -15,25 +16,24 @@ type UserProfileBlockProps = {
 
 const UserProfileBlock = (props: UserProfileBlockProps): JSX.Element => {
 
-    console.log(props);
+    const { data: session /*, status*/ } = useSession();
 
-    if(props.params?.logedInUserEmail === null)
-        {
-            return (
-                <a className="btn btn-primary" role="button" href={urlToLoginPage}>
-                    Sign in
-                </a>
-            );
-        }
-    else{
+    console.log(props);
+    if (session?.user){
         return (
             <div>
-                <a className='mx-5 text-decoration-none text-muted' href={urlToLoginPage}>
-                    <span>Log out</span>
+                <a
+                    className='mx-5 text-decoration-none text-muted' 
+                    href={`/api/auth/signout`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        signOut();
+                    }}>
+                    <span>Sign Out</span>
                 </a>
-                <a href={urlToUserProfile}>
+                <a className='mx-2'>
                     <Gravatar className="rounded-circle shadow-4-strong"
-                        email="a-email@example.com" 
+                        email={session.user.email!} 
                         size={64} 
                         rating={props.fields.Rating.value} 
                         default={props.fields.DefaultImage.value} />
@@ -41,6 +41,19 @@ const UserProfileBlock = (props: UserProfileBlockProps): JSX.Element => {
             </div>
         );
     }
+    else
+        {
+            return (
+                <a 
+                className="text-decoration-none"  
+                href={`/api/auth/signin`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  signIn();}}>
+                    Sign In
+                </a>
+            );
+        }
 };
 
 export default UserProfileBlock;
