@@ -5,7 +5,7 @@ import {
   Field,
   getPublicUrl,
   LayoutServiceData,
-  Placeholder,
+  Placeholder
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import Head from 'next/head';
 import Scripts from 'src/Scripts';
@@ -24,10 +24,10 @@ interface RouteFields {
   Title?: Field;
 }
 
-const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
-  const { route } = layoutData.sitecore;
+const Layout = (props: LayoutProps): JSX.Element => {
+  const { route } = props.layoutData.sitecore;
   const fields = route?.fields as RouteFields;
-  const isPageEditing = layoutData.sitecore.context.pageEditing;
+  const isPageEditing = props.layoutData.sitecore.context.pageEditing;
   const mainClassPageEditing = isPageEditing ? 'editing-mode' : 'prod-mode';
 
   return (
@@ -40,7 +40,7 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
 
       {/* root placeholder for the app, which we add components to using route data */}
       <div className={mainClassPageEditing}>
-        <Navigation />
+        <Navigation layoutData={props.layoutData} />
         <header>
           <div id="header">{route && <Placeholder name="headless-header" rendering={route} />}</div>
         </header>

@@ -1,6 +1,6 @@
 {
     "namespace": "Feature.Account",
-    "references": [ "Foundation.*" ],
+    "references": [ "Foundation.*", "Feature.Folders" ],
     "items" : {
         "includes": [
             {
@@ -11,6 +11,11 @@
             {
                 "name": "renderings",
                 "path": "/sitecore/layout/renderings/Feature/HackBack/Account",
+                "scope": "ItemAndDescendants"
+            },
+            {
+                "name": "placeholders",
+                "path": "/sitecore/layout/Placeholder Settings/Feature/HackBack/Account",
                 "scope": "ItemAndDescendants"
             }
         ]
