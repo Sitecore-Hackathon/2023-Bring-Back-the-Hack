@@ -1,4 +1,8 @@
-import { getPublicUrl, LayoutServiceData, Placeholder } from '@sitecore-jss/sitecore-jss-nextjs';
+import {
+  getPublicUrl,
+  LayoutServiceData,
+  Placeholder
+} from '@sitecore-jss/sitecore-jss-nextjs';
 import Link from 'next/link';
 
 // Prefix public assets with a public URL to enable compatibility with Sitecore Experience Editor.
@@ -10,10 +14,7 @@ interface LayoutProps {
 }
 
 const Navigation = ({layoutData} : LayoutProps): JSX.Element => {
-  console.log(layoutData);
-  // const route2 = props.sitecore.route;
   const  route  =  layoutData.sitecore.route;
-  // console.log(route);
   
   return (
     <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
@@ -24,7 +25,7 @@ const Navigation = ({layoutData} : LayoutProps): JSX.Element => {
           </a>
         </Link>
       </h5>
-      <nav className="my-2 my-md-0 mr-md-3">
+      <nav className="my-2 my-md-0 mr-md-3 flex-grow-1 ">
         <a
           href="https://styleguide.hackback.localhost"
           // target="_blank"

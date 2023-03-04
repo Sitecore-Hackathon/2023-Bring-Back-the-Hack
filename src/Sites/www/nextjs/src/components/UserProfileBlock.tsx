@@ -6,7 +6,6 @@ import Gravatar from 'react-gravatar';
 // component that works on pages which support both client and server side
 // rendering, and avoids any flash incorrect content on initial page load.
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-
 type UserProfileBlockProps = {
   fields: {
     Rating : Field<Gravatar.Rating>,
@@ -16,7 +15,7 @@ type UserProfileBlockProps = {
 
 const UserProfileBlock = (props: UserProfileBlockProps): JSX.Element => {
 
-    const { data: session /*, status*/ } = useSession();
+    const { data: session } = useSession();
 
     if (session?.user){
         return (
@@ -42,7 +41,8 @@ const UserProfileBlock = (props: UserProfileBlockProps): JSX.Element => {
         {
             return (
                 <a 
-                className="text-decoration-none"  
+                className="btn btn-secondary btn-lg active" role="button" aria-pressed="true"
+                // className="text-decoration-none"  
                 href={`/api/auth/signin`}
                 onClick={(e) => {
                   e.preventDefault();
