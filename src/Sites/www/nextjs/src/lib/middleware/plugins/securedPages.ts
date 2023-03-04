@@ -1,4 +1,3 @@
-
 import { MiddlewarePlugin } from 'lib/middleware';
 import { NextRequest, NextResponse } from 'next/server';
 import { SecuredPagesMiddleware } from 'src/middleware/securedpages-middleware';
@@ -21,7 +20,7 @@ class SecuredPagesPlugin implements MiddlewarePlugin {
       excludeRoute: () => false,
       // This function determines if the middleware should be turned off.
       // By default it is disabled while in development mode.
-      disabled: () => false//=> process.env.NODE_ENV === 'development',
+      disabled: () => false, //=> process.env.NODE_ENV === 'development',
       // This function resolves site based on hostname
     });
   }
@@ -31,9 +30,9 @@ class SecuredPagesPlugin implements MiddlewarePlugin {
    * @param req<NextRequest>
    * @returns Promise<NextResponse>
    */
-  async exec(req: NextRequest, res?:NextResponse): Promise<NextResponse> {
+  async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
     return this.securedPagesMiddleware.getHandler()(req, res);
   }
 }
 
-export const SecuredPagesPlugin = new SecuredPagesPlugin();
+export const securedPagesPlugin = new SecuredPagesPlugin();
