@@ -63,9 +63,15 @@ We are using local containarized environment, everything you need is already con
     ```
     \.Init.ps1
     ```
-6. run powershell script from repositories root, if the script fails the first time, trying runing .\down.ps1 then .\up.ps1
+6. run powershell script from repositories root, At the end the script will load sitecore login sscreen to authroize CLI items sync
+    - if the script fails the first time, trying runing .\down.ps1 then .\up.ps1
+
     ```
     .\up.ps1
+    ```
+7. if Sitecore Cli does not finish correctly or you didn't login to sitecore before it times out, then you need to run the following
+    ```
+    dotnet sitecore ser push
     ```
 ### To shut down the application
 1. Execute powershell script from project root folder 
@@ -83,17 +89,17 @@ Module allows users to configure their Gravatar options (default image, and rati
 
 ## Usage instructions
 
-### Login with Github account
+### Login with Github account and test secured/gated pages
 1. Open up browser and navigate to https://www.hackback.localhost/
-2. Click on login link on the top menu, this will redirect to Github's login page.
-3. After filling your github credintials, you will be redirected back to the site and logged in.
+2. on the top left menu, click on Page, This page is available for the public.
+3. On the top left menu, click on profile, this page is secured and will navigate you to Github login screen
+4. After filling your github credintials, you will be redirected back to the site, Click on Profile link again and you should be able to view your profile
 
 
-### Configuring secured pages within Sitecore CMS
+### Configuring other secured pages within Sitecore CMS
 This module allow content authors to lock down specific pages or entire path behind login , to configure that follow these steps:
 1. Open up browser and navigate to https://cm.hackback.localhost/sitecore/shell , login with admin/b
-2. Inside content Editor, navigate to /sitecore/content/HackBack/www/Settings/Security Maps folder, right click and create item of template SecuredPages
-    ![Secured pages configuration](docs/images/ConfigureSecuredPages.png)
+2. Inside content Editor, navigate to /sitecore/content/HackBack/www/Settings/Security Maps/Login Gates
 3. In "Path of the secured page" field, type in the path/s (or regularExpression/s) you want to lock behind login, you can enter multiple lines
 4. in "login Redirect Url" type in "/api/auth/signin" - When users without Authorization attempt to access gated pages they will be redirected here.
 5. Save and publish

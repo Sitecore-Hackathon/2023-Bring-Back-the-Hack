@@ -24,16 +24,16 @@ Languages:
       Value: /api/auth/signin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a95502c5-e6d2-4fbf-8ad1-c7043c9982ca"
+      Value: "2690a801-e017-4687-b454-aaf2ae7f9b6c"
     - ID: "b87041f1-5a71-4140-bc4e-7bba2a8c64fa"
       Hint: UrlMapping
       Value: |
         /some/other/page
-        /user
+        /profile
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230304T165839Z
+      Value: 20230304T194826Z
