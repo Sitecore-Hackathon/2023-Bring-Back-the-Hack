@@ -1,23 +1,3 @@
-# TEMP
-
-![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
-# Sitecore Hackathon 2023
-
-- MUST READ: **[Submission requirements](SUBMISSION_REQUIREMENTS.md)**
-- [Entry form template](ENTRYFORM.md)
-  
-### ⟹ [Insert your documentation here](ENTRYFORM.md) <<
-
-> __Important__  
-> 
-> Copy and paste the content of this file into README.md or face automatic __disqualification__  
-> All headlines and subheadlines shall be retained if not noted otherwise.  
-> Fill in text in each section as instructed and then delete the existing text, including this blockquote.
-
-You can find a very good reference to Github flavoured markdown reference in [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). If you want something a bit more WYSIWYG for editing then could use [StackEdit](https://stackedit.io/app) which provides a more user friendly interface for generating the Markdown code. Those of you who are [VS Code fans](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview) can edit/preview directly in that interface too.
-
-# TEMP-END
-
 # Hackathon Submission Entry form
 
 ## Team name
@@ -27,13 +7,6 @@ Bring Back the Hack
  Best Enhancement to SXA Headless
 
 ## Description
->⟹ Write a clear description of your hackathon entry.  
->
->  - Module Purpose
->  - What problem was solved (if any)
->    - How does this module solve it
->
->_You can alternately paste a [link here](#docs) to a document within this repo >containing the description._
 
 Logging in to access gated content is a common usage pattern users engage with every day.  Among other applications, it is a reliable starting point for gathering user data, tracking their journey through a site,  optimizing for maximum engagement.
 
@@ -41,6 +14,7 @@ This module implements complete implemntation of Authentication and Authorizatio
 
 ### Features
 - Integration with external authentication provider - GitHub, out of the box and can be readily expanded with other providers.
+[LINK TO NEXT AUTH]
 ![Screenshot of github authentication](.Images\GithubAuthentication.png)
 
 - Allows content creator to create protected pages that require Authentication to view.
@@ -50,6 +24,9 @@ This module implements complete implemntation of Authentication and Authorizatio
 ![](.Images\Gravatars.png)
 
 - Efficent caching of auth-gated resources on the edge
+
+
+- Implemented through Sitecores middlware plugin architecutre.
 
 
 
@@ -70,8 +47,12 @@ This module implements complete implemntation of Authentication and Authorizatio
 >
 >_Remove this subsection if your entry does not have any prerequisites other than Sitecore_
 
+- Uses docker - so no need to configure it.
 - Sitecore SXA Headless
 - NextJS
+- NextAuth
+- MemCache
+- Any providers that you use.
 
 
 ## Installation instructions
@@ -97,11 +78,18 @@ This module implements complete implemntation of Authentication and Authorizatio
 >3. profit
 
 1. Download prerequesites
-    - Docker
-    - DotNet
-    - Powershell
-    - Github
+* NodeJs 16.x
+* .NET 6.0 SDK
+* .NET Framework 4.8 SDK
+* Visual Studio 2019+
+* Docker for Windows, with Windows Containers enabled
+
 2.  Pull down this repository [Link goes here]
+3. License to the root or update env
+3. Init
+3. up
+
+After these steps run successfully you are ready to go.
 
 
 ### Configuration
@@ -116,14 +104,19 @@ Module allows users to configure their Gravatar options (default image, and rati
 >
 >.![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 >
->You can embed images of different formats too:
->
->![Deal With It](docs/images/deal-with-it.gif?raw=true "Deal With It")
->
 >And you can embed external images too:
 >
 >![Random](https://thiscatdoesnotexist.com/)
->_Remove this subsection if your entry does not require any configuration that >is not fully covered in the installation instructions already_
+>_Remove this subsection if your entry does not require >any configuration that >is not fully covered in the >installation instructions already_
+
+
+- Two components
+    User profile components
+    [IMAGE HERE]
+    SignIn/SignOut component
+    [IMAGE HERE]
+
+
 
 
 
