@@ -5,6 +5,10 @@ Template: "c53200cc-31b2-4e62-8a4c-f19b9a1eedc8"
 Path: /sitecore/content/HackBack/www/Settings/Gravatar/New Gravatar Maturity Options/r
 Languages:
 - Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: R
   Versions:
   - Version: 1
     Fields:
@@ -13,11 +17,11 @@ Languages:
       Value: 20230304T071245Z
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "8cde3e42-6f33-4f9d-b00a-9d1e62706ae0"
+      Value: "76555ab0-a158-4907-b539-5693cd06a2f4"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230304T071245Z
+      Value: 20230304T204155Z
